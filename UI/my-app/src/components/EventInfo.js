@@ -19,4 +19,4 @@ export function WithRouter(Component) {
     }
   }
 
-  export const PageWithParamWithRouter = WithRouter(EventInfo);
+  export const EventPageWithParamWithRouter = WithRouter(EventInfo);

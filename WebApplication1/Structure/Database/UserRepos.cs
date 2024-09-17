@@ -60,5 +60,11 @@ namespace WebApplication1.Structure.Database
             user.IsAdmin = !user.IsAdmin;
             context.Users.Entry(GetUserByGuid(user.UserId)).CurrentValues.SetValues(user);
         }
+        public void UpdateUserPfp(Guid id, string fileName)
+        {
+            User user = GetUserByGuid(id);
+            user.PfpName = fileName;
+            context.Users.Entry(GetUserByGuid(user.UserId)).CurrentValues.SetValues(user);
+        }
     }
 }

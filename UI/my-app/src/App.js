@@ -5,7 +5,8 @@ import {Events} from './components/Event'
 import {UserInfo} from './components/UserInfo'
 import {Login} from './components/Login'
 import {Error} from './components/Error'
-import {PageWithParamWithRouter} from './components/EventInfo'
+import {EventPageWithParamWithRouter} from './components/EventInfo'
+import { UserPageWithParamWithRouter } from './components/UserInfo';
 import { BrowserRouter, Route, Routes, NavLink} from 'react-router-dom';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
             <NavLink className="btn btn-light mx-1 btn-outline-primary" to="/event">
             Event
             </NavLink>
-            <NavLink className="btn btn-light mx-1 btn-outline-primary" to="/userinfo">
+            <NavLink className="btn btn-light mx-1 btn-outline-primary" to={`/u/${localStorage.getItem("userid")}`}>
             UserInfo
             </NavLink>
           </li>
@@ -37,7 +38,10 @@ function App() {
       <Route path="/userinfo" element={<UserInfo />}/>
       <Route path="/error" element={<Error />}/>
       <Route path= '/e'>
-        <Route path=":id"  element={<PageWithParamWithRouter />}/>
+        <Route path=":id"  element={<EventPageWithParamWithRouter />}/>
+      </Route>
+      <Route path= '/u'>
+        <Route path=":id"  element={<UserPageWithParamWithRouter />}/>
       </Route>
 
     </Routes>

@@ -25,10 +25,10 @@ namespace WebApplication1.Middleware
             var result = string.Empty;
             switch (ex)
             {
-                case MyValidationException validationException:
+                /*case MyValidationException validationException:
                     code = HttpStatusCode.BadRequest;
                     result = JsonSerializer.Serialize(validationException.Message);
-                    break;
+                    break;*/
                 case NoElementException NoElementsException:
                     code = HttpStatusCode.NotFound;
                     result = JsonSerializer.Serialize(NoElementsException.Message);

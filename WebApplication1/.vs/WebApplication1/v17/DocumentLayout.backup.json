@@ -1,50 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\webapplication1\\structure\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\structure\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\webapplication1\\structure\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\webapplication1\\structure\\database\\userrepos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\database\\userrepos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\structure\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\webapplication1\\structure\\jwt\\checkadminattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\jwt\\checkadminattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\webapplication1\\middleware\\exceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:middleware\\exceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\webapplication1\\structure\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\webapplication1\\structure\\database\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\database\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\webapplication1\\structure\\data\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\data\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\webapplication1\\structure\\database\\eventrepos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\structure\\database\\eventrepos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\database\\eventrepos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\webapplication1\\pagination\\pager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:pagination\\pager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\middleware\\exceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:middleware\\exceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\exceptions\\myvalidationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:exceptions\\myvalidationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\structure\\jwt\\loginuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\jwt\\loginuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\structure\\database\\userrepos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\database\\userrepos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\structure\\jwt\\tokenprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\jwt\\tokenprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\AppData\\Roaming\\Microsoft\\UserSecrets\\22ad189c-5648-4415-96ff-782ef3969d09\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\structure\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,13 +61,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAcwFcAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAIwHIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-11T12:22:00.565Z",
               "IsPinned": true,
@@ -72,13 +75,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "EventController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Controllers\\EventController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Controllers\\EventController.cs",
               "RelativeDocumentMoniker": "Structure\\Controllers\\EventController.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Controllers\\EventController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Controllers\\EventController.cs",
               "RelativeToolTip": "Structure\\Controllers\\EventController.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAIwEcAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAwwE0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-26T15:35:21.119Z",
               "IsPinned": true,
@@ -88,11 +91,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Controllers\\UserController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Structure\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Controllers\\UserController.cs*",
-              "RelativeToolTip": "Structure\\Controllers\\UserController.cs*",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwDIAAAAYAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Structure\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAkwDEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-11T12:27:21.121Z",
               "IsPinned": true,
@@ -100,105 +103,121 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Data\\User.cs",
-              "RelativeDocumentMoniker": "Structure\\Data\\User.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Data\\User.cs",
-              "RelativeToolTip": "Structure\\Data\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T12:27:19.931Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Database\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "Structure\\Database\\UnitOfWork.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Database\\UnitOfWork.cs",
-              "RelativeToolTip": "Structure\\Database\\UnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T12:26:33.709Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CheckAdminAttribute.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\JWT\\CheckAdminAttribute.cs",
-              "RelativeDocumentMoniker": "Structure\\JWT\\CheckAdminAttribute.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\JWT\\CheckAdminAttribute.cs",
-              "RelativeToolTip": "Structure\\JWT\\CheckAdminAttribute.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T13:00:40.687Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "EventRepos.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Database\\EventRepos.cs",
-              "RelativeDocumentMoniker": "Structure\\Database\\EventRepos.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Database\\EventRepos.cs",
-              "RelativeToolTip": "Structure\\Database\\EventRepos.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAwwCIAAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T12:42:54.715Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "ExceptionHandlerMiddleware.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Middleware\\ExceptionHandlerMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Middleware\\ExceptionHandlerMiddleware.cs",
               "RelativeDocumentMoniker": "Middleware\\ExceptionHandlerMiddleware.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Middleware\\ExceptionHandlerMiddleware.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Middleware\\ExceptionHandlerMiddleware.cs",
               "RelativeToolTip": "Middleware\\ExceptionHandlerMiddleware.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAnwCEAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwB4AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-12T09:06:29.649Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "UserRepos.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Database\\UserRepos.cs",
-              "RelativeDocumentMoniker": "Structure\\Database\\UserRepos.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Database\\UserRepos.cs",
-              "RelativeToolTip": "Structure\\Database\\UserRepos.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowCQAAAAMAAAAAAAAAA==",
+              "Title": "EventRepos.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Database\\EventRepos.cs",
+              "RelativeDocumentMoniker": "Structure\\Database\\EventRepos.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Database\\EventRepos.cs",
+              "RelativeToolTip": "Structure\\Database\\EventRepos.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAIwBUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T13:53:57.814Z",
+              "WhenOpened": "2024-09-17T15:51:40.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserRepos.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Database\\UserRepos.cs",
+              "RelativeDocumentMoniker": "Structure\\Database\\UserRepos.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Database\\UserRepos.cs",
+              "RelativeToolTip": "Structure\\Database\\UserRepos.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAIwBYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T14:40:07.448Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "RegisterController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Controllers\\RegisterController.cs",
-              "RelativeDocumentMoniker": "Structure\\Controllers\\RegisterController.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Structure\\Controllers\\RegisterController.cs",
-              "RelativeToolTip": "Structure\\Controllers\\RegisterController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "LoginUser.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\JWT\\LoginUser.cs",
+              "RelativeDocumentMoniker": "Structure\\JWT\\LoginUser.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\JWT\\LoginUser.cs",
+              "RelativeToolTip": "Structure\\JWT\\LoginUser.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBQAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-14T10:20:41.802Z",
+              "WhenOpened": "2024-09-17T14:36:40.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TokenProvider.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\JWT\\TokenProvider.cs",
+              "RelativeDocumentMoniker": "Structure\\JWT\\TokenProvider.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\JWT\\TokenProvider.cs",
+              "RelativeToolTip": "Structure\\JWT\\TokenProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T14:34:36.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "secrets.json",
+              "DocumentMoniker": "C:\\Users\\User\\AppData\\Roaming\\Microsoft\\UserSecrets\\22ad189c-5648-4415-96ff-782ef3969d09\\secrets.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\22ad189c-5648-4415-96ff-782ef3969d09\\secrets.json",
+              "ToolTip": "C:\\Users\\User\\AppData\\Roaming\\Microsoft\\UserSecrets\\22ad189c-5648-4415-96ff-782ef3969d09\\secrets.json",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\22ad189c-5648-4415-96ff-782ef3969d09\\secrets.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-17T14:29:54.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MyValidationException.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Exceptions\\MyValidationException.cs",
+              "RelativeDocumentMoniker": "Exceptions\\MyValidationException.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Exceptions\\MyValidationException.cs",
+              "RelativeToolTip": "Exceptions\\MyValidationException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T14:27:34.734Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Pager.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Pagination\\Pager.cs",
-              "RelativeDocumentMoniker": "Pagination\\Pager.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\WebApplication1\\Pagination\\Pager.cs",
-              "RelativeToolTip": "Pagination\\Pager.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAcwBEAAAAMAAAAAAAAAA==",
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Structure\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Structure\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T12:14:55.48Z"
+              "WhenOpened": "2024-09-17T14:26:35.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\WeatherForecast.cs",
+              "RelativeToolTip": "WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T14:26:30.574Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -47,7 +47,25 @@ namespace WebApplication1.Structure.Controllers
             await unitOfWork.SaveAsync();
             return "Promoted user to admin";
         }
-
+        [HttpPost("UploadImage")]
+        public async Task<string> UploadImage(IFormFile file)
+        {
+            string fileName;
+            if (file != null && file.Length > 0)
+            {
+                fileName = file.FileName;
+                var physPath = environment.ContentRootPath + "/UserPhotos/" + file.FileName;
+                using (var stream = new FileStream(physPath, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+            }
+            else
+            {
+                fileName = "default.png";
+            }
+            return fileName;
+        }
         [HttpPost("JWT_Login")]
         public async Task<IActionResult> Login(string Email, string Password)
         {
@@ -58,6 +76,12 @@ namespace WebApplication1.Structure.Controllers
                 response = Ok(new { token });
             }
             return response;
+        }
+        [HttpPost("UpdateUserPfp")]
+        public async Task UpdateUserPfp(Guid id, string fileName)
+        {
+            unitOfWork.Users.UpdateUserPfp(id, fileName);
+            await unitOfWork.SaveAsync();
         }
     }
 }

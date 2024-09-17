@@ -52,8 +52,6 @@ export class Events extends Component {
         
     }
     updateEvent(name, id) {
-        console.log(name);
-        console.log(id);
         const token = localStorage.getItem('token' || "");
         fetch(variables.EVENT_API_URL + '/GetEventByName?Name=' + name, {
             headers: {Authorization: `Bearer ${token}`}
@@ -257,7 +255,7 @@ export class Events extends Component {
                 localStorage.setItem('error-desc', response.statusText)
                 window.location.href='/error'
             } else {
-            return response.json()}
+            response.text()}
         }
     )
         .then(data => {
@@ -279,7 +277,20 @@ export class Events extends Component {
         })
     }
     enroll(eventid) {
+        fetch(variables.USER_API_URL+`/EnrollUserInEvent?EventId=${eventid}&UserId=${localStorage.getItem('userid')}`, {
+            headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
+        })
+        .then(response => {
+            if (!response.ok) {
+                localStorage.setItem('error', response.status);
+                localStorage.setItem('error-desc', response.statusText)
+                
+            } else {
+            response.json()
+            }
+        })
 
+        .catch(err => {})
 
     }
 
@@ -320,9 +331,6 @@ export class Events extends Component {
                     <thead>
                         <tr>
                             <th>
-                                ID
-                            </th>
-                            <th>
                                 <input className="form-control m-2"
                                 onChange={this.ChangeEventNameFilter}
                                 placeholder="Filter"/>
@@ -349,37 +357,40 @@ export class Events extends Component {
                                 placeholder="Filter"/>
                                 Category
                             </th>
+                            { /*localStorage.getItem('isadmin') == 'True' ? (
                             <th>
                                 Options
-                            </th>
+                            </th> ) : null
+                               */}
                         </tr>
                     </thead>
                     <tbody>
                         {events.map(e =>
                             <tr key={e._EventName} onClick={() => this.handleEventRedirect(e.EventId)}>
-                                <td>{e.EventId}</td>
                                 <td>{e._EventName}</td>
                                 <td>{e._Description}</td>
                                 <td>{e._Time}</td>
                                 <td>{e._Place}</td>
                                 <td>{e._Category}</td>
-                                { localStorage.getItem('isadmin') == true ? (
+                                { localStorage.getItem('isadmin') == 'True' ? (
                                 <><td><button type="button"
                                         className="btn btn-light mr-1" data-bs-toggle="modal"
-                                        data-bs-target="#eventModal" onClick={() => this.editClick(e)}>
+                                        data-bs-target="#eventModal" onClick={(env) => {
+                                            env.stopPropagation();
+                                            this.editClick(e)}}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
                                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                             <path fillRule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                                         </svg>
                                     </button></td><td><button type="button"
-                                        className="btn btn-light mr-1" onClick={() => this.deleteEvent(e._EventName)}>
+                                        className="btn btn-light mr-1" onClick={(env) => {
+                                            env.stopPropagation();
+                                            this.deleteEvent(e._EventName)
+                                            }}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash-fill" viewBox="0 0 16 16">
                                             <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
                                         </svg>
-                                    </button></td></>) : (
-                                        <button/>
-                                    )
-                                }
+                                    </button></td></>) : null                                }
                             </tr>
                         )}
                     </tbody>

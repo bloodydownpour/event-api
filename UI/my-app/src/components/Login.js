@@ -29,7 +29,7 @@ export class Login extends Component {
             localStorage.setItem('token', data.token);
             localStorage.setItem('userid', jwtDecode(data.token).sub)
             localStorage.setItem('isadmin', jwtDecode(data.token).isAdmin)
-            //window.location.href='/event'
+            window.location.href='/event'
         })
         .catch(error => {
         })
