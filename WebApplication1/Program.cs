@@ -1,5 +1,4 @@
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
@@ -11,6 +10,8 @@ using System.Net.NetworkInformation;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using WebApplication1.Middleware;
+using WebApplication1.Validation;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(c =>
@@ -78,6 +79,9 @@ builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
 
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
     .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
+builder.Services.AddControllers()
+    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RegisterValidator>());
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -85,8 +89,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors("AllowOrigin");
 app.UseCustomExceptionHandler();
-app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
 app.UseHttpsRedirection();
 
 app.UseAuthentication();

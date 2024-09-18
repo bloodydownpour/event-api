@@ -1,9 +1,6 @@
-import { jwtDecode } from "jwt-decode";
 import { useParams } from "react-router-dom";
 import React,{Component} from "react";
 import { variables } from "../variables";
-import userEvent from "@testing-library/user-event";
-import { scryRenderedComponentsWithType } from "react-dom/test-utils";
 export function WithRouter(Component) {
     function ComponentWithRouterProp(props) {
       let params = useParams();
@@ -118,12 +115,19 @@ export class UserInfo extends Component {
                     <div className="card">
                         <div className="card-body text-center">
                         <img width="400px" height="100%" src={`${variables.USER_PHOTO_URL}\\${PfpName}`} 
-                        alt="Фотография" className=" mb-3"/>
+                        alt="Фотография" className=" mb-3"
+                        onClick={() => this.fileInput.click()} />
                             <h2>{_Name + " " + _Surname}</h2>
                             <p><strong>Дата рождения:</strong> {_DateOfBirth}</p>
                             <p><strong>Дата регистрации:</strong> {_RegisterDate}</p>
                             {this.state.userId == localStorage.getItem('userid') ?
-                            <input className="m-2" type="file" accept="image/*" onChange={this.handleImageChange}/> : null}
+                            <input
+                            type="file"
+                            accept="image/*"
+                            style={{ display: 'none' }}
+                            ref={input => this.fileInput = input}
+                            onChange={this.handleImageChange}
+                        /> : null}
                         </div>
                     </div>
                 </div>

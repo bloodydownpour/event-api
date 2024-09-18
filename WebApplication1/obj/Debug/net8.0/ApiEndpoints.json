@@ -202,29 +202,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Surname",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "DateOfBirth",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Password",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "user",
+        "Type": "WebApplication1.Structure.Data.User",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [

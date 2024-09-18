@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json.Serialization;
 using WebApplication1.Structure.Data;
 using WebApplication1.Structure.Database;
 using WebApplication1.Structure.JWT;
+using WebApplication1.Validation;
 
 namespace WebApplication1.Structure.Controllers
 {
@@ -25,26 +27,22 @@ namespace WebApplication1.Structure.Controllers
         }
         // GET: RegistrationController
         [HttpPost("RegisterUser")]
-        public async Task<string> AddUser(string Name, string Surname, string DateOfBirth, string Email, string Password)
+        
+        public async Task<string> AddUser(User user)
         {
- 
-            User user = new User()
-            {
-                UserId = Guid.NewGuid(),
-                _Name = Name,
-                _Surname = Surname,
-                _DateOfBirth = DateOnly.Parse(DateOfBirth),
-                _RegisterDate = DateOnly.FromDateTime(DateTime.Now),
-                _Email = Email,
-                _Password = Encrypt(Password),
-                IsAdmin = false,
-                PfpName = "default.png"
-            };
-            unitOfWork.Users.AddUser(user);
-            await unitOfWork.SaveAsync();
-            return "200 OK\n" +
-                $"{Encrypt(Password)}";
 
+            
+            if (ModelState.IsValid)
+            {
+                user._Password = Encrypt(user._Password);
+                unitOfWork.Users.AddUser(user);
+                await unitOfWork.SaveAsync();
+                return "200 OK\n" +
+                    $"{user._Password}";
+            } else
+            {
+                return "Failed";
+            }
         }
     }
 }

@@ -587,3 +587,6 @@ C:\Users\User\source\repos\EventAPI\EventAPI\WebApplication1\obj\Debug\net8.0\re
 C:\Users\User\source\repos\EventAPI\EventAPI\WebApplication1\obj\Debug\net8.0\WebApplication1.pdb
 C:\Users\User\source\repos\EventAPI\EventAPI\WebApplication1\obj\Debug\net8.0\WebApplication1.genruntimeconfig.cache
 C:\Users\User\source\repos\EventAPI\EventAPI\WebApplication1\obj\Debug\net8.0\ref\WebApplication1.dll
+C:\Users\User\source\repos\EventAPI\EventAPI\WebApplication1\obj\Debug\net8.0\WebApplication1.sourcelink.json
+C:\Users\User\source\repos\EventAPI\EventAPI\WebApplication1\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\User\source\repos\EventAPI\EventAPI\WebApplication1\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

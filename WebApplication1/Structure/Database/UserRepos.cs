@@ -30,11 +30,16 @@ namespace WebApplication1.Structure.Database
             {
                 context.Users.Add(user);
             }
+            else throw new Exception("User exists");
         }
         //Получение участника по электронной почте
         public User GetUserByEmail(string Email)
         {
             return context.Users.Single(x => x._Email == Email);
+        }
+        public bool UserEmailIsFree(string Email)
+        {
+            return context.Users.All(x => x._Email != Email);
         }
         //Получение участника по его ID
         public User GetUserByGuid(Guid guid)
