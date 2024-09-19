@@ -14,6 +14,7 @@ export class UserInfo extends Component {
         super(props);
         this.state = {
             user:{},
+            paramsUserId:'',
             userId:'',
             _Name:"",
             _Surname:"",
@@ -25,8 +26,13 @@ export class UserInfo extends Component {
         }
     }
     componentDidMount() {
-        this.state.userId=this.props.params.id;
+        this.state.paramsUserId=this.props.params.id;
+        this.state.userId=localStorage.getItem('userid');
         this.parseUser()
+    }
+    componentDidUpdate() {
+        if (this.state.paramsUserId !== this.props.params.id)
+            window.location.reload();
     }
     setPfp(id, filename) {
         fetch(variables.USER_API_URL+"/UpdateUserPfp?id="+id+"&fileName="+filename,
@@ -42,7 +48,7 @@ export class UserInfo extends Component {
             } })
     }
     parseUser() {
-        fetch (variables.USER_API_URL+"/GetUserByGuid?id="+this.state.userId, {
+        fetch (variables.USER_API_URL+"/GetUserByGuid?id="+this.props.params.id, {
             headers: {
                 Authorization: `Bearer ${JSON.stringify(localStorage.getItem('token'))}`,
                 'Accept': 'application/json',
@@ -54,7 +60,7 @@ export class UserInfo extends Component {
             if (!response.ok) {
                 localStorage.setItem('error', 401);
                 localStorage.setItem('error-desc', "Unauthorized")
-                window.location.href='/error'
+                
             }
             return response.json();
         })
@@ -116,7 +122,8 @@ export class UserInfo extends Component {
                         <div className="card-body text-center">
                         <img width="400px" height="100%" src={`${variables.USER_PHOTO_URL}\\${PfpName}`} 
                         alt="Фотография" className=" mb-3"
-                        onClick={() => this.fileInput.click()} />
+                        onClick={() =>  {
+                            if (this.state.paramsUserId == localStorage.getItem('userid')) this.fileInput.click()}} />
                             <h2>{_Name + " " + _Surname}</h2>
                             <p><strong>Дата рождения:</strong> {_DateOfBirth}</p>
                             <p><strong>Дата регистрации:</strong> {_RegisterDate}</p>
@@ -132,6 +139,8 @@ export class UserInfo extends Component {
                     </div>
                 </div>
             </div>
+
+            
         </div>
             
         )

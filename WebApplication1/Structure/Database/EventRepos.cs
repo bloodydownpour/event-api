@@ -34,26 +34,33 @@ namespace WebApplication1.Structure.Database
         {
             context.Events.Entry(GetEventById(newEvent.EventId)).CurrentValues.SetValues(newEvent);
         }
-        public IQueryable<Event> GetEventWithDate(DateOnly RequiredDate)
-        {
-            return context.Events.Where(x => DateOnly.FromDateTime(x._Time) == RequiredDate);
-        }
-        public IQueryable<Event> GetEventWithPlace(string Place)
-        {
-            return context.Events.Where(x => x._Place == Place);
-        }
-        public IQueryable<Event> GetEventWithCategory(string Category)
-        {
-            return context.Events.Where(x => x._Category == Category);
-        }
         //Удаление ивента
         public void DeleteEvent(Guid EventId)
         {
+            ClearRelations(EventId);
             if (context.Events.Any(e => e.EventId == EventId))
             {
                 context.Events.Remove(GetEventById(EventId));
             }
-            else throw new Exception("There is no such event");
+        }
+        public void ClearRelations(Guid EventId)
+        {
+            List<EventUser> entities = context.EventUsers.Where(x => x.EventId == EventId).ToList<EventUser>();
+            foreach (var entity in entities)
+            {
+                context.EventUsers.Remove(entity);
+            }
+        }
+        //Получение списка событий для определённого пользователя
+        public List<Event> GetEventsForThisUser(Guid UserId)
+        {
+            List<EventUser> eu = [.. context.EventUsers.Where(eu => eu.UserId == UserId)];
+            List<Event> events = new List<Event>();
+            foreach (EventUser eventUser in eu)
+            {
+                events.Add(GetEventById(eventUser.EventId));
+            }
+            return events;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using WebApplication1.Structure.Data;
+﻿using Microsoft.AspNetCore.SignalR;
+using WebApplication1.Structure.Data;
 namespace WebApplication1.Structure.Database
 {
     public class UserRepos(EventDbContext context)
@@ -70,6 +71,17 @@ namespace WebApplication1.Structure.Database
             User user = GetUserByGuid(id);
             user.PfpName = fileName;
             context.Users.Entry(GetUserByGuid(user.UserId)).CurrentValues.SetValues(user);
+        }
+
+        public List<User> GetUsersForThisEvent(Guid EventId)
+        {
+            List<EventUser> eu = [.. context.EventUsers.Where(eu => eu.EventId == EventId)];
+            List<User> users = new List<User>();
+            foreach(EventUser user in eu)
+            {
+                users.Add(GetUserByGuid(user.UserId));
+            }
+            return users;
         }
     }
 }

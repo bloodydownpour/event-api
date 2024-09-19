@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using WebApplication1.Structure.Data;
 using WebApplication1.Structure.Database;
 using WebApplication1.Structure.JWT;
@@ -93,5 +94,18 @@ namespace WebApplication1.Structure.Controllers
             unitOfWork.Users.EnrollUserInEvent(EventId, UserId);
             await unitOfWork.SaveAsync();
         }
+        [HttpPost("RetractUserFromEvent")]
+        public async Task RetractUserFromEvent(Guid EventId, Guid UserId)
+        {
+            unitOfWork.Users.RetractUserFromEvent(EventId, UserId);
+            await unitOfWork.SaveAsync();
+        }
+        [HttpGet("GetUsersForThisEvent")]
+        [Authorize]
+        public List<User> GetUsersForThisEvent(Guid EventId)
+        {
+            return unitOfWork.Users.GetUsersForThisEvent(EventId);
+        }
+        
     }
 }

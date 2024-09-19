@@ -104,6 +104,13 @@ namespace WebApplication1.Structure.Controllers
             await unitOfWork.SaveAsync();
         }
         //Удаление события
+
+        [HttpGet("GetEventsForThisUser")]
+        public List<Event> GetEventsForThisUser(Guid UserId)
+        {
+            return unitOfWork.Events.GetEventsForThisUser(UserId);
+        }
+
         [HttpDelete("DeleteEvent")]
         public async Task DeleteEvent(Guid eventId)
         {

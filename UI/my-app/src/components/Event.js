@@ -25,7 +25,7 @@ export class Events extends Component {
         }
     }
 
-
+    
     filter() {
         var eventNameFilter = this.state.eventNameFilter;
         var eventTimeFilter = this.state.eventTimeFilter;
@@ -96,9 +96,10 @@ export class Events extends Component {
                     return response.json()}
                 }
                 )
-            .then(result => {
+            .then(() => {
                 alert("Успешный успех")
                 this.refreshEventList();
+                window.location.reload();
             })
             .catch(err => {})
     }
@@ -140,6 +141,7 @@ export class Events extends Component {
                 .then(result => {
                     alert("Успешный успех")
                     this.refreshEventList();
+                    
                 })
                 .catch(err => {})
         }
@@ -195,10 +197,12 @@ export class Events extends Component {
            )
             .then(data => {
                 this.setState({ events: data , eventsWithoutFilter: data});
+                console.log("hello world")
             })
             .catch(err => { 
 
             })
+            
         }
 
 
@@ -311,6 +315,7 @@ export class Events extends Component {
         }
 
     render() {
+        
         const {
             events,
             eventId,
@@ -461,7 +466,7 @@ export class Events extends Component {
                                             : null
                                         }
                                         {this.state.initialEventName != ''
-                                            ? <button type="button" className="btn btn-primary float-start" onClick={() => this.updateEvent(this.state._EventName, this.state.eventId)}>Update</button>
+                                            ? <button type="button" className="btn btn-primary float-start" onClick={() => this.updateEvent(this.state.initialEventName, this.state.eventId)}>Update</button>
                                             : null
                                         }
 
