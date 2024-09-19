@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\middleware\\exceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:middleware\\exceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\structure\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\structure\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\structure\\data\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\data\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\middleware\\exceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:middleware\\exceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\validation\\registervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\structure\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\structure\\data\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|solutionrelative:structure\\data\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54A4BC8A-07C7-47D9-B9B8-8F3DB8DB41C9}|WebApplication1.csproj|c:\\users\\user\\source\\repos\\eventapi\\eventapi\\webapplication1\\structure\\database\\userrepos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -64,7 +64,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFIAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-11T12:22:00.565Z",
               "IsPinned": true,
@@ -72,13 +72,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "RegisterController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Controllers\\RegisterController.cs",
               "RelativeDocumentMoniker": "Structure\\Controllers\\RegisterController.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Controllers\\RegisterController.cs",
               "RelativeToolTip": "Structure\\Controllers\\RegisterController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowCgAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwB8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-18T13:54:30.185Z",
               "IsPinned": true,
@@ -86,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EventController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Controllers\\EventController.cs",
               "RelativeDocumentMoniker": "Structure\\Controllers\\EventController.cs",
@@ -99,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Structure\\Controllers\\UserController.cs",
@@ -112,20 +112,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ExceptionHandlerMiddleware.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Middleware\\ExceptionHandlerMiddleware.cs",
               "RelativeDocumentMoniker": "Middleware\\ExceptionHandlerMiddleware.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Middleware\\ExceptionHandlerMiddleware.cs",
               "RelativeToolTip": "Middleware\\ExceptionHandlerMiddleware.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA1wB4AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowB4AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-12T09:06:29.649Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Data\\User.cs",
               "RelativeDocumentMoniker": "Structure\\Data\\User.cs",
@@ -138,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Event.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Structure\\Data\\Event.cs",
               "RelativeDocumentMoniker": "Structure\\Data\\Event.cs",
@@ -151,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "RegisterValidator.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\WebApplication1\\Validation\\RegisterValidator.cs",
               "RelativeDocumentMoniker": "Validation\\RegisterValidator.cs",

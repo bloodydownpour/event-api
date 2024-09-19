@@ -30,8 +30,6 @@ namespace WebApplication1.Structure.Controllers
         
         public async Task<string> AddUser(User user)
         {
-
-            
             if (ModelState.IsValid)
             {
                 user._Password = Encrypt(user._Password);
