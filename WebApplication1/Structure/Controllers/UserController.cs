@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using WebApplication1.Structure.Data;
 using WebApplication1.Structure.Database;
@@ -81,6 +82,15 @@ namespace WebApplication1.Structure.Controllers
         public async Task UpdateUserPfp(Guid id, string fileName)
         {
             unitOfWork.Users.UpdateUserPfp(id, fileName);
+            await unitOfWork.SaveAsync();
+        }
+
+
+        [HttpPost("AddUserInEvent")]
+        [Authorize]
+        public async Task AddUserInEvent(Guid EventId, Guid UserId)
+        {
+            unitOfWork.Users.EnrollUserInEvent(EventId, UserId);
             await unitOfWork.SaveAsync();
         }
     }
