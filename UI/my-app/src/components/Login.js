@@ -6,6 +6,9 @@ export class Login extends Component {
     constructor(props) {
         super(props);
         this.state={
+            Email:"",
+            Password:"",
+
             registeringName: "",
             registeringSurname: "",
             registeringDateOfBirth: "",
@@ -27,9 +30,7 @@ export class Login extends Component {
         return [year, month, day].join('-');
     }
     login() {
-        let email = document.getElementById("email").value;
-        let password = document.getElementById("password").value;
-        fetch(variables.USER_API_URL+"/JWT_Login?Email="+email+"&Password="+password, {
+        fetch(variables.USER_API_URL+"/JWT_Login?Email="+this.state.Email+"&Password="+this.state.Password, {
             method:"POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -78,12 +79,16 @@ export class Login extends Component {
                 body: user
             })
             .then(response => {
+                console.log(response)
                 if (!response.ok) {
-                    localStorage.setItem('error', response.status);
+                    localStorage.setItem('error', response);
                     localStorage.setItem('error-desc', response.statusText+": Validation error");
                     window.location.href='/error'
+                } else {
+                    alert("Registered")
+                    response.json();
+                    window.location.reload();
                 }
-                response.json();
             })
             .then(data => {
                 
@@ -107,16 +112,24 @@ export class Login extends Component {
     ChangeRegisteringPassword=(e)=> {
         this.setState({registeringPassword: e.target.value});
     }
+
+
+    ChangeEmail=(e)=> {
+        this.setState({Email: e.target.value});
+    }
+    ChangePassword=(e)=> {
+        this.setState({Password: e.target.value});
+    }
     render() {
         localStorage.setItem('token', '');
         localStorage.setItem('userid', '');
         localStorage.setItem('isadmin', '');
        return (<div>
-        <input type="text" id="email" placeholder="E-mail"/>
-        <input type="password" id="password" placeholder="Password"/>
-        <input type="submit" value="Submit" onClick={() => this.login()}/>
+            <input type="email" className="form-control mt-2 mx-auto" style={{width: 400}} placeholder="E-mail" onChange={this.ChangeEmail}/>
+        <input type="password" className="form-control mt-2 mx-auto"style={{width: 400}} placeholder="Password" onChange={this.ChangePassword}/>
+        <input type="submit" className="btn btn-primary mt-2" value="Submit" onClick={() => this.login()}/><br/>
 
-        <button type="button" className="btn btn-primary" data-bs-toggle="modal"
+        <button type="button" className="btn btn-primary mt-2" data-bs-toggle="modal"
                     data-bs-target="#registerModal">Register</button>
         
 
@@ -159,7 +172,7 @@ export class Login extends Component {
                                                  onChange={this.ChangeRegisteringPassword} />
                                         </div>
                                         <button type="button" className="btn btn-primary float-start"
-                                        onClick={() => this.registerUser()}>Update</button>
+                                        onClick={() => this.registerUser()}>Register</button>
 
                                     </div>
                                 </div>

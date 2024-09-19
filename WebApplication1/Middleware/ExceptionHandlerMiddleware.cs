@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
-using System.Net;
+﻿using System.Net;
 using System.Text.Json;
 using WebApplication1.Exceptions;
 namespace WebApplication1.Middleware
@@ -33,10 +31,10 @@ namespace WebApplication1.Middleware
                     code = HttpStatusCode.NotFound;
                     result = JsonSerializer.Serialize(NoElementsException.Message);
                     break;
-                case Exception exc:
+                /*case Exception exc:
                     code = HttpStatusCode.NotImplemented;
                     result = JsonSerializer.Serialize(exc.Message);
-                    break;
+                    break;*/
             }
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)code;
