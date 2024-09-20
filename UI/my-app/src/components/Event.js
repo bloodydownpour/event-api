@@ -25,6 +25,19 @@ export class Events extends Component {
         }
     }
 
+    formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+    
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+    
+        return [year, month, day].join('-');
+    }
     
     filter() {
         var eventNameFilter = this.state.eventNameFilter;
@@ -93,7 +106,7 @@ export class Events extends Component {
                         localStorage.setItem('error-desc', response.statusText)
                         window.location.href='/error'
                     } else {
-                    return response.json()}
+                    response.json()}
                 }
                 )
             .then(() => {
@@ -155,7 +168,7 @@ export class Events extends Component {
             _Time: this.state._Time,
             _Place: this.state._Place,
             _Category: this.state._Category,
-            FileName: this.state.PhotoName
+            FileName: this.state.FileName
         })
         fetch(`${variables.EVENT_API_URL}/AddEvent`, {
             method: 'POST',
@@ -197,7 +210,6 @@ export class Events extends Component {
            )
             .then(data => {
                 this.setState({ events: data , eventsWithoutFilter: data});
-                console.log("hello world")
             })
             .catch(err => { 
 
@@ -257,7 +269,7 @@ export class Events extends Component {
             if (!response.ok) {
                 localStorage.setItem('error', response.status);
                 localStorage.setItem('error-desc', response.statusText)
-                window.location.href='/error'
+
             } else {
             response.text()}
         }
@@ -436,7 +448,7 @@ export class Events extends Component {
                                             <span className="input-group-text">
                                                 Time
                                             </span>
-                                            <input type="text" className="form-control"
+                                            <input type="date" className="form-control"
                                                 value={_Time} onChange={this.ChangeTime} />
                                         </div>
 

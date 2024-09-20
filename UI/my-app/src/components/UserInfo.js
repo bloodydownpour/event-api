@@ -22,7 +22,10 @@ export class UserInfo extends Component {
             _RegisterDate:"",
             _Email:"",
             PfpName:"default.png",
-            IsAdmin:""
+            IsAdmin:"",
+
+
+            events:[]
         }
     }
     componentDidMount() {
@@ -74,6 +77,23 @@ export class UserInfo extends Component {
                 PfpName: data.PfpName,
                 IsAdmin:data.IsAdmin
             });
+            fetch(`${variables.EVENT_API_URL}/GetEventsForThisUser?UserId=${this.state.paramsUserId}`, {
+                method: 'GET',
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                this.setState({
+                    events: data
+                });
+
+            })
         })
         .catch(err => {}) 
     }
@@ -88,7 +108,6 @@ export class UserInfo extends Component {
             body:formData
         })
         .then(response => {
-            console.log(response)
             if (!response.ok) {
                 localStorage.setItem('error', response.status);
                 localStorage.setItem('error-desc', response.statusText)
@@ -105,22 +124,27 @@ export class UserInfo extends Component {
         })
         .catch(err => {})
     }
+
+    handleEventRedirect(id) {
+        window.location.href=`/e/${id}`
+    }
+
     render() {
         const {
-            user,
             _Name,
             _Surname,
             _DateOfBirth,
             _RegisterDate,
             PfpName,
+            events
         } = this.state;
         return(
             <div className="container mt-5">
             <div className="row justify-content-center">
-                <div className="col-md-6">
+                <div className="col-md">
                     <div className="card">
                         <div className="card-body text-center">
-                        <img width="400px" height="100%" src={`${variables.USER_PHOTO_URL}\\${PfpName}`} 
+                        <img width="400px" height="auto" src={`${variables.USER_PHOTO_URL}\\${PfpName}`} 
                         alt="Фотография" className=" mb-3"
                         onClick={() =>  {
                             if (this.state.paramsUserId == localStorage.getItem('userid')) this.fileInput.click()}} />
@@ -139,8 +163,28 @@ export class UserInfo extends Component {
                     </div>
                 </div>
             </div>
-
-            
+            {events.length != 0 ? 
+            <table className="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                Events this person enrolled to
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {events.map(event =>
+                            <tr key={event.EventId} onClick={() => this.handleEventRedirect(event.EventId)}>
+                                <td>{`${event._EventName}`}</td>
+                                <td>{`${event._Description}`}</td>
+                            </tr>
+                        )}
+                    </tbody>
+                    
+                </table> : null}
         </div>
             
         )

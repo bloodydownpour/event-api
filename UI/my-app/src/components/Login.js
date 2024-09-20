@@ -79,7 +79,6 @@ export class Login extends Component {
                 body: user
             })
             .then(response => {
-                console.log(response)
                 if (!response.ok) {
                     localStorage.setItem('error', response);
                     localStorage.setItem('error-desc', response.statusText+": Validation error");
@@ -90,11 +89,7 @@ export class Login extends Component {
                     window.location.reload();
                 }
             })
-            .then(data => {
-                
-            })
             .catch(err => {
-                console.log(err._Password)
             })
     }
     ChangeRegisteringName=(e)=> {

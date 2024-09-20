@@ -141,7 +141,6 @@ export function WithRouter(Component) {
                 alt={this.state.eventName} 
                 style={{ width: '100%', height: 'auto' }}
               />
-              {console.log(isEnrolled)}
               {
                 
               !isEnrolled ? 
@@ -172,18 +171,16 @@ export function WithRouter(Component) {
                             <th>
                                 Enrolled Users
                             </th>
-                            {localStorage.getItem('isadmin') == 'True' ?
-                            <th>
-                                Options
-                            </th> : null}
                         </tr>
                     </thead>
                     <tbody>
-                        {registeredUsers.map(user =>
+                      {registeredUsers.length != 0 ?
+                        <>{registeredUsers.map(user =>
                             <tr key={user.UserId} onClick={() => this.handleUserRedirect(user.UserId)}>
                                 <td>{`${user._Name} ${user._Surname}`}</td>
                             </tr>
-                        )}
+                        )}</> :  <p>None</p>
+                      }
                     </tbody>
                     
                 </table>
