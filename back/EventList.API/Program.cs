@@ -73,8 +73,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddDbContext<EventDbContext>(x => x.UseSqlServer(
     "Data Source=(local); Database=EventList; Persist Security Info = false; MultipleActiveResultSets=True; Trusted_Connection=True; TrustServerCertificate=True;",
     b => b.MigrationsAssembly("EventList.API")));
-builder.Services.AddScoped<EventRepos>();
-builder.Services.AddScoped<UserRepos>();
+builder.Services.AddScoped<EventRepository>();
+builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<UnitOfWork>();
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
 

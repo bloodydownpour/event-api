@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.EventController",
+    "ContainingType": "EventList.API.Structure.Controllers.EventController",
     "Method": "AddEvent",
     "RelativePath": "Event/AddEvent",
     "HttpMethod": "POST",
@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "_event",
-        "Type": "WebApplication1.Structure.Data.Event",
+        "Type": "EventList.Domain.Data.Event",
         "IsRequired": true
       }
     ],
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.EventController",
+    "ContainingType": "EventList.API.Structure.Controllers.EventController",
     "Method": "DeleteEvent",
     "RelativePath": "Event/DeleteEvent",
     "HttpMethod": "DELETE",
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.EventController",
+    "ContainingType": "EventList.API.Structure.Controllers.EventController",
     "Method": "EditEvent",
     "RelativePath": "Event/EditEvent",
     "HttpMethod": "POST",
@@ -57,7 +57,7 @@
     "Parameters": [
       {
         "Name": "newEvent",
-        "Type": "WebApplication1.Structure.Data.Event",
+        "Type": "EventList.Domain.Data.Event",
         "IsRequired": true
       }
     ],
@@ -70,7 +70,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.EventController",
+    "ContainingType": "EventList.API.Structure.Controllers.EventController",
     "Method": "GetEvent_ID",
     "RelativePath": "Event/GetEventById",
     "HttpMethod": "GET",
@@ -85,7 +85,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "WebApplication1.Structure.Data.Event",
+        "Type": "EventList.Domain.Data.Event",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.EventController",
+    "ContainingType": "EventList.API.Structure.Controllers.EventController",
     "Method": "GetEvent_Name",
     "RelativePath": "Event/GetEventByName",
     "HttpMethod": "GET",
@@ -111,7 +111,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "WebApplication1.Structure.Data.Event",
+        "Type": "EventList.Domain.Data.Event",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -122,7 +122,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.EventController",
+    "ContainingType": "EventList.API.Structure.Controllers.EventController",
     "Method": "GetAllEvents",
     "RelativePath": "Event/GetEventList",
     "HttpMethod": "GET",
@@ -131,7 +131,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebApplication1.Structure.Data.Event, WebApplication1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[EventList.Domain.Data.Event, EventList.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -142,7 +142,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.EventController",
+    "ContainingType": "EventList.API.Structure.Controllers.EventController",
     "Method": "GetAllEventsPaginated",
     "RelativePath": "Event/GetEventListPaginated",
     "HttpMethod": "GET",
@@ -157,7 +157,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebApplication1.Structure.Data.Event, WebApplication1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[EventList.Domain.Data.Event, EventList.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -168,7 +168,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.EventController",
+    "ContainingType": "EventList.API.Structure.Controllers.EventController",
     "Method": "GetEventsForThisUser",
     "RelativePath": "Event/GetEventsForThisUser",
     "HttpMethod": "GET",
@@ -183,7 +183,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebApplication1.Structure.Data.Event, WebApplication1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[EventList.Domain.Data.Event, EventList.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -194,7 +194,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.EventController",
+    "ContainingType": "EventList.API.Structure.Controllers.EventController",
     "Method": "UploadImage",
     "RelativePath": "Event/UploadImage",
     "HttpMethod": "POST",
@@ -220,7 +220,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.RegisterController",
+    "ContainingType": "EventList.API.Structure.Controllers.RegisterController",
     "Method": "AddUser",
     "RelativePath": "Register/RegisterUser",
     "HttpMethod": "POST",
@@ -229,7 +229,7 @@
     "Parameters": [
       {
         "Name": "user",
-        "Type": "WebApplication1.Structure.Data.User",
+        "Type": "EventList.Domain.Data.User",
         "IsRequired": true
       }
     ],
@@ -246,7 +246,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.UserController",
+    "ContainingType": "EventList.API.Structure.Controllers.UserController",
     "Method": "AddUserInEvent",
     "RelativePath": "User/AddUserInEvent",
     "HttpMethod": "POST",
@@ -273,7 +273,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.UserController",
+    "ContainingType": "EventList.API.Structure.Controllers.UserController",
     "Method": "RegisterUserInEvent",
     "RelativePath": "User/EnrollUserInEvent",
     "HttpMethod": "POST",
@@ -304,7 +304,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.UserController",
+    "ContainingType": "EventList.API.Structure.Controllers.UserController",
     "Method": "GetUserByGuid",
     "RelativePath": "User/GetUserByGuid",
     "HttpMethod": "GET",
@@ -319,7 +319,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "WebApplication1.Structure.Data.User",
+        "Type": "EventList.Domain.Data.User",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -330,7 +330,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.UserController",
+    "ContainingType": "EventList.API.Structure.Controllers.UserController",
     "Method": "GetAllUsers",
     "RelativePath": "User/GetUsers",
     "HttpMethod": "GET",
@@ -339,7 +339,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebApplication1.Structure.Data.User, WebApplication1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[EventList.Domain.Data.User, EventList.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -350,7 +350,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.UserController",
+    "ContainingType": "EventList.API.Structure.Controllers.UserController",
     "Method": "GetUsersForThisEvent",
     "RelativePath": "User/GetUsersForThisEvent",
     "HttpMethod": "GET",
@@ -365,7 +365,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebApplication1.Structure.Data.User, WebApplication1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[EventList.Domain.Data.User, EventList.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -376,7 +376,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.UserController",
+    "ContainingType": "EventList.API.Structure.Controllers.UserController",
     "Method": "Login",
     "RelativePath": "User/JWT_Login",
     "HttpMethod": "POST",
@@ -397,7 +397,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.UserController",
+    "ContainingType": "EventList.API.Structure.Controllers.UserController",
     "Method": "RetractUserFromEvent",
     "RelativePath": "User/RetractUserFromEvent",
     "HttpMethod": "POST",
@@ -424,7 +424,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.UserController",
+    "ContainingType": "EventList.API.Structure.Controllers.UserController",
     "Method": "ToggleAdmin",
     "RelativePath": "User/ToggleAdmin",
     "HttpMethod": "POST",
@@ -450,7 +450,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.UserController",
+    "ContainingType": "EventList.API.Structure.Controllers.UserController",
     "Method": "UpdateUserPfp",
     "RelativePath": "User/UpdateUserPfp",
     "HttpMethod": "POST",
@@ -477,7 +477,7 @@
     ]
   },
   {
-    "ContainingType": "WebApplication1.Structure.Controllers.UserController",
+    "ContainingType": "EventList.API.Structure.Controllers.UserController",
     "Method": "UploadImage",
     "RelativePath": "User/UploadImage",
     "HttpMethod": "POST",
@@ -501,26 +501,5 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "WebApplication1.Structure.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApplication1.WeatherForecast, WebApplication1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetWeatherForecast"
   }
 ]

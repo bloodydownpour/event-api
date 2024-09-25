@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using EventList.Persistence.Database;
+using EventList.Infrastructure.Database;
 using EventList.Application.Pagination;
 using EventList.Domain.Data;
 using NUnit.Framework;
@@ -8,19 +8,15 @@ namespace EventList.API.Structure.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-[Authorize]
-public class EventController : Controller
+//[Authorize]
+public class EventController(UnitOfWork unitOfWork, IWebHostEnvironment environment) : Controller
 {
 
-    private readonly UnitOfWork unitOfWork;
-    private readonly IWebHostEnvironment environment;
-    public EventController(UnitOfWork unitOfWork, IWebHostEnvironment environment)
-    {
-        this.unitOfWork = unitOfWork;
-        this.environment = environment;
-    }
+    private readonly UnitOfWork unitOfWork = unitOfWork;
+    private readonly IWebHostEnvironment environment = environment;
+
     //Получение списка всех событий
-    
+
     [HttpGet("GetEventList")]
     public List<Event> GetAllEvents()
     {
@@ -34,7 +30,7 @@ public class EventController : Controller
         const int pageSize = 5;
 
         if (page < 1) page = 1;
-        int recsCount = events.Count();
+        int recsCount = events.Count;
         Pager pager = new Pager(recsCount, page, pageSize);
 
         int recSkip = (page - 1) * pageSize;
@@ -43,15 +39,15 @@ public class EventController : Controller
     }
     //Получение определённого события по его ID
     [HttpGet("GetEventById")]
-    public Event GetEvent_ID(Guid id)
+    public Event? GetEvent_ID(Guid id)
     {
-        return unitOfWork.Events.GetEventById(id);
+        return unitOfWork.Events.GetEventById(id).Result;
     }
     //Получение события по его названию
     [HttpGet("GetEventByName")]
-    public Event GetEvent_Name(string Name)
+    public Event? GetEvent_Name(string Name)
     {
-        return unitOfWork.Events.GetEventByName(Name);
+        return unitOfWork.Events.GetEventByName(Name).Result;
     }
     //Добавление нового события
     

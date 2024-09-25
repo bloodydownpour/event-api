@@ -1,20 +1,20 @@
-﻿namespace EventList.Persistence.Database;
+﻿namespace EventList.Infrastructure.Database;
 
-public class UnitOfWork(EventDbContext context, EventRepos eRepos, UserRepos uRepos) : IDisposable
+public class UnitOfWork(EventDbContext context, EventRepository eRepos, UserRepository uRepos) : IDisposable
 {
 
     private readonly EventDbContext context = context;
-    private readonly EventRepos eventRepos = eRepos;
-    private readonly UserRepos userRepos = uRepos;
+    private readonly EventRepository eventRepos = eRepos;
+    private readonly UserRepository userRepos = uRepos;
 
-    public EventRepos Events
+    public EventRepository Events
     {
         get
         {
             return eventRepos;
         }
     }
-    public UserRepos Users
+    public UserRepository Users
     {
         get
         {

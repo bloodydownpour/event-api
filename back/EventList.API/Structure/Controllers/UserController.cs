@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using EventList.Domain.Data;
-using EventList.Persistence.Database;
+using EventList.Infrastructure.Database;
 using EventList.Persistence.JWT;
 
 namespace EventList.API.Structure.Controllers
@@ -31,9 +29,9 @@ namespace EventList.API.Structure.Controllers
             return unitOfWork.Users.GetUsers().ToList();
         }
         [HttpGet("GetUserByGuid")]
-        public User GetUserByGuid(Guid id)
+        public User? GetUserByGuid(Guid id)
         {
-            return unitOfWork.Users.GetUserByGuid(id);
+            return unitOfWork.Users.GetUserByGuid(id).Result;
         }
         [HttpPost("EnrollUserInEvent")]
         public async Task<string> RegisterUserInEvent(Guid EventId, Guid UserId)

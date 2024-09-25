@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Никита\\event-api\\back\\EventList.API\\EventList.API.csproj": {}
+    "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.API\\EventList.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Никита\\event-api\\back\\EventList.API\\EventList.API.csproj": {
+    "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.API\\EventList.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Никита\\event-api\\back\\EventList.API\\EventList.API.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.API\\EventList.API.csproj",
         "projectName": "EventList.API",
-        "projectPath": "C:\\Users\\Никита\\event-api\\back\\EventList.API\\EventList.API.csproj",
-        "packagesPath": "C:\\Users\\Никита\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Никита\\event-api\\back\\EventList.API\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.API\\EventList.API.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Никита\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,14 +33,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Никита\\event-api\\back\\EventList.Application\\EventList.Application.csproj": {
-                "projectPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Application\\EventList.Application.csproj"
+              "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Application\\EventList.Application.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Application\\EventList.Application.csproj"
               },
-              "C:\\Users\\Никита\\event-api\\back\\EventList.Inftastructure\\EventList.Inftastructure.csproj": {
-                "projectPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Inftastructure\\EventList.Inftastructure.csproj"
+              "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Inftastructure\\EventList.Inftastructure.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Inftastructure\\EventList.Inftastructure.csproj"
               },
-              "C:\\Users\\Никита\\event-api\\back\\EventList.Persistence\\EventList.Persistence.csproj": {
-                "projectPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Persistence\\EventList.Persistence.csproj"
+              "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Persistence\\EventList.Persistence.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Persistence\\EventList.Persistence.csproj"
               }
             }
           }
@@ -142,24 +142,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Никита\\event-api\\back\\EventList.Application\\EventList.Application.csproj": {
+    "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Application\\EventList.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Никита\\event-api\\back\\EventList.Application\\EventList.Application.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Application\\EventList.Application.csproj",
         "projectName": "EventList.Application",
-        "projectPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Application\\EventList.Application.csproj",
-        "packagesPath": "C:\\Users\\Никита\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Application\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Application\\EventList.Application.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Никита\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -175,8 +175,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Никита\\event-api\\back\\EventList.Domain\\EventList.Domain.csproj": {
-                "projectPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Domain\\EventList.Domain.csproj"
+              "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Domain\\EventList.Domain.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Domain\\EventList.Domain.csproj"
               }
             }
           }
@@ -233,24 +233,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Никита\\event-api\\back\\EventList.Domain\\EventList.Domain.csproj": {
+    "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Domain\\EventList.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Никита\\event-api\\back\\EventList.Domain\\EventList.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Domain\\EventList.Domain.csproj",
         "projectName": "EventList.Domain",
-        "projectPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Domain\\EventList.Domain.csproj",
-        "packagesPath": "C:\\Users\\Никита\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Domain\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Domain\\EventList.Domain.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Никита\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -298,24 +298,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Никита\\event-api\\back\\EventList.Inftastructure\\EventList.Inftastructure.csproj": {
+    "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Inftastructure\\EventList.Inftastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Никита\\event-api\\back\\EventList.Inftastructure\\EventList.Inftastructure.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Inftastructure\\EventList.Inftastructure.csproj",
         "projectName": "EventList.Inftastructure",
-        "projectPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Inftastructure\\EventList.Inftastructure.csproj",
-        "packagesPath": "C:\\Users\\Никита\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Inftastructure\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Inftastructure\\EventList.Inftastructure.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Inftastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Никита\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -331,8 +331,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Никита\\event-api\\back\\EventList.Application\\EventList.Application.csproj": {
-                "projectPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Application\\EventList.Application.csproj"
+              "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Application\\EventList.Application.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Application\\EventList.Application.csproj"
               }
             }
           }
@@ -351,6 +351,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -367,24 +373,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Никита\\event-api\\back\\EventList.Persistence\\EventList.Persistence.csproj": {
+    "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Persistence\\EventList.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Никита\\event-api\\back\\EventList.Persistence\\EventList.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Persistence\\EventList.Persistence.csproj",
         "projectName": "EventList.Persistence",
-        "projectPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Persistence\\EventList.Persistence.csproj",
-        "packagesPath": "C:\\Users\\Никита\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Persistence\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Persistence\\EventList.Persistence.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Никита\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -400,11 +406,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Никита\\event-api\\back\\EventList.Application\\EventList.Application.csproj": {
-                "projectPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Application\\EventList.Application.csproj"
+              "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Application\\EventList.Application.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Application\\EventList.Application.csproj"
               },
-              "C:\\Users\\Никита\\event-api\\back\\EventList.Domain\\EventList.Domain.csproj": {
-                "projectPath": "C:\\Users\\Никита\\event-api\\back\\EventList.Domain\\EventList.Domain.csproj"
+              "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Domain\\EventList.Domain.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Domain\\EventList.Domain.csproj"
               }
             }
           }
@@ -453,7 +459,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

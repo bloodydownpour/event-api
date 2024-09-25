@@ -2137,12 +2137,18 @@
           "Microsoft.AspNetCore.Mvc": "2.2.0"
         },
         "runtime": {
-          "EventList.Application.dll": {}
+          "EventList.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "EventList.Domain/1.0.0": {
         "runtime": {
-          "EventList.Domain.dll": {}
+          "EventList.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

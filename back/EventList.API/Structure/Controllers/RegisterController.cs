@@ -2,23 +2,19 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
 using System.Text;
-using EventList.Persistence.Database;
+using EventList.Infrastructure.Database;
 
 namespace EventList.API.Structure.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class RegisterController : Controller
+    public class RegisterController(UnitOfWork unitOfWork) : Controller
     {
-        private readonly UnitOfWork unitOfWork;
-        public RegisterController(UnitOfWork unitOfWork)
+        private readonly UnitOfWork unitOfWork = unitOfWork;
+
+        private static string Encrypt(string value)
         {
-            this.unitOfWork = unitOfWork;
-        }
-        private string Encrypt(string value)
-        {
-            var hash = SHA256.Create();
-            return Convert.ToHexString(hash.ComputeHash(Encoding.UTF8.GetBytes(value))).ToLower();
+            return Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(value))).ToLower();
         }
         // GET: RegistrationController
         [HttpPost("RegisterUser")]
