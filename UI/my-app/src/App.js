@@ -10,6 +10,7 @@ import { UserPageWithParamWithRouter } from './components/UserInfo';
 import { BrowserRouter, Route, Routes, NavLink} from 'react-router-dom';
 
 function App() {
+  
   return (
     <BrowserRouter>
     <div className="App container">
@@ -24,9 +25,10 @@ function App() {
             <NavLink className="btn btn-light mx-1 btn-outline-primary" to="/event">
             Event
             </NavLink>
-            <NavLink className="btn btn-light mx-1 btn-outline-primary" to={`/u/${localStorage.getItem("userid")}`}>
+            {(localStorage.getItem('userid') != '') ? <NavLink className="btn btn-light mx-1 btn-outline-primary"
+             to={`/u/${localStorage.getItem("userid")}`}>
             UserInfo
-            </NavLink>
+            </NavLink> : null }
           </li>
         </ul>
       </nav>

@@ -23,18 +23,18 @@ public class ExceptionHandlerMiddleware(RequestDelegate next)
         var result = string.Empty;
         switch (ex)
         {
-            /*case MyValidationException validationException:
+            case MyValidationException validationException:
                 code = HttpStatusCode.BadRequest;
                 result = JsonSerializer.Serialize(validationException.Message);
-                break;*/
+                break;
             case NoElementException NoElementsException:
                 code = HttpStatusCode.NotFound;
                 result = JsonSerializer.Serialize(NoElementsException.Message);
                 break;
-            /*case Exception exc:
-                code = HttpStatusCode.NotImplemented;
+            case Exception exc:
+                code = HttpStatusCode.BadRequest;
                 result = JsonSerializer.Serialize(exc.Message);
-                break;*/
+                break;
         }
         context.Response.ContentType = "application/json";
         context.Response.StatusCode = (int)code;

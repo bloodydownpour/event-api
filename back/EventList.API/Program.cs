@@ -2,7 +2,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
-using EventList.Persistence.Database;
+using EventList.Infrastructure.Database;
 using EventList.Persistence.JWT;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -10,10 +10,12 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using EventList.Application.Validation;
 using FluentValidation.AspNetCore;
-using EventList.Infrastructure.Middleware;
-using Microsoft.EntityFrameworkCore.Migrations.Internal;
+using EventList.API.Middleware;
+using EventList.Infrastructure.CQRS.Queries;
+using EventList.Infrastructure.CQRS.Commands;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddCors(c =>
 {
     c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
@@ -74,7 +76,13 @@ builder.Services.AddDbContext<EventDbContext>(x => x.UseSqlServer(
     "Data Source=(local); Database=EventList; Persist Security Info = false; MultipleActiveResultSets=True; Trusted_Connection=True; TrustServerCertificate=True;",
     b => b.MigrationsAssembly("EventList.API")));
 builder.Services.AddScoped<EventRepository>();
+builder.Services.AddScoped<EventQueries>();
+builder.Services.AddScoped<EventCommands>();
+
 builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<UserQueries>();
+builder.Services.AddScoped<UserCommands>();
+
 builder.Services.AddScoped<UnitOfWork>();
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
 

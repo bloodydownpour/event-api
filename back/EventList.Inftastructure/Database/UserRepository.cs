@@ -1,5 +1,6 @@
 ﻿using EventList.Domain.Data;
 using EventList.Domain.Interfaces;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 namespace EventList.Infrastructure.Database;
 

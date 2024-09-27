@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using EventList.Domain.Data;
 using EventList.Infrastructure.Database;
 using EventList.Persistence.JWT;
+using EventList.API.DTO;
+using AutoMapper;
+using EventList.Infrastructure.CQRS.Commands;
+using EventList.Infrastructure.CQRS.Queries;
 
 namespace EventList.API.Structure.Controllers
 {
@@ -10,41 +14,42 @@ namespace EventList.API.Structure.Controllers
     [Route("[controller]")]
     public class UserController : Controller
     {
-        private readonly UnitOfWork unitOfWork;
-        private readonly TokenProvider tokenProvider;
         private readonly LoginUser loginUser;
         private readonly IWebHostEnvironment environment;
-        public UserController(UnitOfWork unitOfWork, TokenProvider tokenProvider, LoginUser loginUser, IWebHostEnvironment environment)
+        private readonly IMapper mapper;
+        private readonly UserCommands commands;
+        private readonly UserQueries queries;
+        public UserController(LoginUser loginUser, IWebHostEnvironment environment, IMapper mapper,
+            UserCommands commands, UserQueries queries)
         {
-            this.unitOfWork = unitOfWork;
-            this.tokenProvider = tokenProvider;
             this.loginUser = loginUser;
             this.environment = environment;
+            this.mapper = mapper;
+            this.commands = commands;
+            this.queries = queries;
         }
 
 
         [HttpGet("GetUsers")]
         public List<User> GetAllUsers()
         {
-            return unitOfWork.Users.GetUsers().ToList();
+            return queries.GetAllUsers();
         }
         [HttpGet("GetUserByGuid")]
-        public User? GetUserByGuid(Guid id)
+        public UserDTO GetUserByGuid(Guid id)
         {
-            return unitOfWork.Users.GetUserByGuid(id).Result;
+            return mapper.Map<UserDTO>(queries.GetUserByGuid(id));
         }
         [HttpPost("EnrollUserInEvent")]
         public async Task<string> RegisterUserInEvent(Guid EventId, Guid UserId)
         {
-            unitOfWork.Users.EnrollUserInEvent(EventId, UserId);
-            await unitOfWork.SaveAsync();
+            await commands.RegisterUserInEvent(EventId, UserId);
             return "Added";
         }
         [HttpPost("ToggleAdmin")]
         public async Task<string> ToggleAdmin(Guid UserId)
         {
-            unitOfWork.Users.ToggleAdmin(UserId);
-            await unitOfWork.SaveAsync();
+            await commands.ToggleAdmin(UserId);
             return "Promoted user to admin";
         }
         [HttpPost("UploadImage")]
@@ -80,8 +85,7 @@ namespace EventList.API.Structure.Controllers
         [HttpPost("UpdateUserPfp")]
         public async Task UpdateUserPfp(Guid id, string fileName)
         {
-            unitOfWork.Users.UpdateUserPfp(id, fileName);
-            await unitOfWork.SaveAsync();
+            await commands.UpdateUserPfp(id, fileName);
         }
 
 
@@ -89,20 +93,18 @@ namespace EventList.API.Structure.Controllers
         [Authorize]
         public async Task AddUserInEvent(Guid EventId, Guid UserId)
         {
-            unitOfWork.Users.EnrollUserInEvent(EventId, UserId);
-            await unitOfWork.SaveAsync();
+            await commands.AddUserInEvent(EventId, UserId);
         }
         [HttpPost("RetractUserFromEvent")]
         public async Task RetractUserFromEvent(Guid EventId, Guid UserId)
         {
-            unitOfWork.Users.RetractUserFromEvent(EventId, UserId);
-            await unitOfWork.SaveAsync();
+            await commands.RetractUserFromEvent(EventId, UserId);
         }
         [HttpGet("GetUsersForThisEvent")]
         [Authorize]
         public List<User> GetUsersForThisEvent(Guid EventId)
         {
-            return unitOfWork.Users.GetUsersForThisEvent(EventId);
+            return queries.GetUsersForThisEvent(EventId);
         }
         
     }

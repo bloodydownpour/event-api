@@ -80,7 +80,7 @@ export class Login extends Component {
             })
             .then(response => {
                 if (!response.ok) {
-                    localStorage.setItem('error', response);
+                    localStorage.setItem('error', response.status);
                     localStorage.setItem('error-desc', response.statusText+": Validation error");
                     window.location.href='/error'
                 } else {

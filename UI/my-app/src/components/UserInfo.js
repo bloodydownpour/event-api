@@ -37,6 +37,15 @@ export class UserInfo extends Component {
         if (this.state.paramsUserId !== this.props.params.id)
             window.location.reload();
     }
+
+    format(target) {
+        let date = target.split('T')[0];
+        let time = target.split('T')[1];
+
+        let returnDate = date.split('-').reverse().join('.');
+        if (time != null) returnDate += " " + time;
+        return returnDate;
+    }
     setPfp(id, filename) {
         fetch(variables.USER_API_URL+"/UpdateUserPfp?id="+id+"&fileName="+filename,
             {method: 'POST',
@@ -72,10 +81,7 @@ export class UserInfo extends Component {
                 _Name: data._Name,
                 _Surname:data._Surname,
                 _DateOfBirth:data._DateOfBirth,
-                _RegisterDate:data._RegisterDate,
-                _Email:data._Email,
                 PfpName: data.PfpName,
-                IsAdmin:data.IsAdmin
             });
             fetch(`${variables.EVENT_API_URL}/GetEventsForThisUser?UserId=${this.state.paramsUserId}`, {
                 method: 'GET',
@@ -134,10 +140,14 @@ export class UserInfo extends Component {
             _Name,
             _Surname,
             _DateOfBirth,
-            _RegisterDate,
             PfpName,
             events
         } = this.state;
+        if (localStorage.getItem('userid') == '') {
+            localStorage.setItem('error', "403");
+            localStorage.setItem('error-desc', "Unauthorized")
+            window.location.href='/error'
+        } else 
         return(
             <div className="container mt-5">
             <div className="row justify-content-center">
@@ -149,8 +159,7 @@ export class UserInfo extends Component {
                         onClick={() =>  {
                             if (this.state.paramsUserId == localStorage.getItem('userid')) this.fileInput.click()}} />
                             <h2>{_Name + " " + _Surname}</h2>
-                            <p><strong>Дата рождения:</strong> {_DateOfBirth}</p>
-                            <p><strong>Дата регистрации:</strong> {_RegisterDate}</p>
+                            <p><strong>Дата рождения:</strong> {this.format(_DateOfBirth)}</p>
                             {this.state.userId == localStorage.getItem('userid') ?
                             <input
                             type="file"

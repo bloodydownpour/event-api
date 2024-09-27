@@ -1,63 +1,56 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using EventList.Infrastructure.Database;
-using EventList.Application.Pagination;
 using EventList.Domain.Data;
-using NUnit.Framework;
+using EventList.API.DTO;
+using AutoMapper;
+using EventList.Persistence.JWT;
+using EventList.Infrastructure.CQRS.Queries;
+using EventList.Infrastructure.CQRS.Commands;
 using Microsoft.AspNetCore.Authorization;
+
 namespace EventList.API.Structure.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-//[Authorize]
-public class EventController(UnitOfWork unitOfWork, IWebHostEnvironment environment) : Controller
+[Authorize]
+public class EventController(IWebHostEnvironment environment,
+    IMapper mapper, EventQueries queries, EventCommands commands) : Controller
 {
-
-    private readonly UnitOfWork unitOfWork = unitOfWork;
+    private readonly IMapper mapper = mapper;
     private readonly IWebHostEnvironment environment = environment;
+    private readonly EventQueries queries = queries;
+    private readonly EventCommands commands = commands;
 
     //Получение списка всех событий
 
     [HttpGet("GetEventList")]
     public List<Event> GetAllEvents()
     {
-        return [.. unitOfWork.Events.GetEvents()];
+        return queries.GetAllEvents();
     }
     [HttpGet("GetEventListPaginated")]
     public List<Event> GetAllEventsPaginated(int page = 1)
     {
-        List<Event> events = [.. unitOfWork.Events.GetEvents()];
-
-        const int pageSize = 5;
-
-        if (page < 1) page = 1;
-        int recsCount = events.Count;
-        Pager pager = new Pager(recsCount, page, pageSize);
-
-        int recSkip = (page - 1) * pageSize;
-        List<Event> showedData = events.Skip(recSkip).Take(pager.PageSize).ToList();
-        return showedData;
+        return queries.GetAllEventsPaginated(page);
     }
     //Получение определённого события по его ID
     [HttpGet("GetEventById")]
-    public Event? GetEvent_ID(Guid id)
+    public EventDTO GetEvent_ID(Guid id)
     {
-        return unitOfWork.Events.GetEventById(id).Result;
+        return mapper.Map<EventDTO>(queries.GetEvent_ID(id));
     }
     //Получение события по его названию
     [HttpGet("GetEventByName")]
-    public Event? GetEvent_Name(string Name)
+    public EventDTO GetEvent_Name(string Name)
     {
-        return unitOfWork.Events.GetEventByName(Name).Result;
+        return mapper.Map<EventDTO>(queries.GetEvent_Name(Name));
     }
     //Добавление нового события
     
     [HttpPost("AddEvent")]
-    //[CheckAdmin]
-    public async Task<string> AddEvent(Event _event)
+    [CheckAdmin]
+    public async Task AddEvent(Event _event)
     {
-        unitOfWork.Events.AddEvent(_event);
-        await unitOfWork.SaveAsync();
-        return "OK";
+        await commands.AddEvent(_event);
     }
 
     [HttpPost("UploadImage")]
@@ -83,21 +76,19 @@ public class EventController(UnitOfWork unitOfWork, IWebHostEnvironment environm
     [HttpPost("EditEvent")]
     public async Task EditEvent(Event newEvent)
     {
-        unitOfWork.Events.EditEvent(newEvent);
-        await unitOfWork.SaveAsync();
+        await commands.EditEvent(newEvent);
     }
     //Удаление события
 
     [HttpGet("GetEventsForThisUser")]
     public List<Event> GetEventsForThisUser(Guid UserId)
     {
-        return unitOfWork.Events.GetEventsForThisUser(UserId);
+        return queries.GetEventsForThisUser(UserId);
     }
 
     [HttpDelete("DeleteEvent")]
     public async Task DeleteEvent(Guid eventId)
     {
-        unitOfWork.Events.DeleteEvent(eventId);
-        await unitOfWork.SaveAsync();
+       await commands.DeleteEvent(eventId);
     }
 }

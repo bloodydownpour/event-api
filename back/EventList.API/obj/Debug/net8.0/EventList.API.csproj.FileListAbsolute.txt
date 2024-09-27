@@ -491,3 +491,11 @@ C:\Users\User\source\repos\EventAPI\EventAPI\back\EventList.API\obj\Debug\net8.0
 C:\Users\User\source\repos\EventAPI\EventAPI\back\EventList.API\obj\Debug\net8.0\EventList.API.pdb
 C:\Users\User\source\repos\EventAPI\EventAPI\back\EventList.API\obj\Debug\net8.0\EventList.API.genruntimeconfig.cache
 C:\Users\User\source\repos\EventAPI\EventAPI\back\EventList.API\obj\Debug\net8.0\ref\EventList.API.dll
+C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net8.0\System.Web.Mvc.dll
+C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net8.0\System.Web.Razor.dll
+C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net8.0\System.Web.Helpers.dll
+C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net8.0\System.Web.WebPages.Deployment.dll
+C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net8.0\System.Web.WebPages.Razor.dll
+C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net8.0\System.Web.WebPages.dll
+C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
+C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll

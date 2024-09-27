@@ -7,7 +7,6 @@ export class Events extends Component {
         super(props);
         this.state = {
             events: [],
-            eventId: [],
             initialEventName: "",
             modalTitle: "",
             _EventName: "",
@@ -37,6 +36,15 @@ export class Events extends Component {
             day = '0' + day;
     
         return [year, month, day].join('-');
+    }
+
+    format(target) {
+        let date = target.split('T')[0];
+        let time = target.split('T')[1];
+
+        let returnDate = date.split('-').reverse().join('.');
+        if (time != null) returnDate += " " + time;
+        return returnDate;
     }
     
     filter() {
@@ -219,10 +227,16 @@ export class Events extends Component {
 
 
     componentDidMount() {
-        for (let i = 0; i < this.state.events.length; i++) {
-            this.state.eventId[i] = this.state.events[i].EventId;
+        if (localStorage.getItem('userid') != '') {
+            this.refreshEventList();
+        } else {
+            localStorage.setItem('error', '403');
+            localStorage.setItem('error-desc', 'Unauthorized')
+
+            
+            window.location.href='/error'
         }
-        this.refreshEventList();
+
     }
     ChangeEventName = (e) => {
         this.setState({ _EventName: e.target.value });
@@ -269,7 +283,7 @@ export class Events extends Component {
             if (!response.ok) {
                 localStorage.setItem('error', response.status);
                 localStorage.setItem('error-desc', response.statusText)
-
+                window.location.href='/error'
             } else {
             response.text()}
         }
@@ -300,7 +314,7 @@ export class Events extends Component {
             if (!response.ok) {
                 localStorage.setItem('error', response.status);
                 localStorage.setItem('error-desc', response.statusText)
-                
+                window.location.href='/error'
             } else {
             response.json()
             }
@@ -330,7 +344,6 @@ export class Events extends Component {
         
         const {
             events,
-            eventId,
             modalTitle,
             _EventName,
             _Description,
@@ -386,7 +399,7 @@ export class Events extends Component {
                             <tr key={e._EventName} onClick={() => this.handleEventRedirect(e.EventId)}>
                                 <td>{e._EventName}</td>
                                 <td>{e._Description}</td>
-                                <td>{e._Time}</td>
+                                <td>{this.format(e._Time)}</td>
                                 <td>{e._Place}</td>
                                 <td>{e._Category}</td>
                                 { localStorage.getItem('isadmin') == 'True' ? (

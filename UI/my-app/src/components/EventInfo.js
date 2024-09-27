@@ -19,7 +19,6 @@ export function WithRouter(Component) {
       super(props);
 
       this.state={
-        eventid:'',
         eventName:'',
         description:'',
         time:'',
@@ -34,7 +33,14 @@ export function WithRouter(Component) {
       this.getTargetEvent();
     }
   
-   
+    format(target) {
+      let date = target.split('T')[0];
+      let time = target.split('T')[1];
+
+      let returnDate = date.split('-').reverse().join('.');
+      if (time != null) returnDate += " " + time;
+      return returnDate;
+  }
 
     isEnrolled=()=> {
       var isEnrolled = false;
@@ -155,16 +161,12 @@ export function WithRouter(Component) {
               <p><strong>Description:</strong> {description}</p>
               <p><strong>Place:</strong> {place}</p>
               <p><strong>Category:</strong> {category}</p>
-              <p><strong>Time:</strong> {time}</p>
+              <p><strong>Time:</strong> {this.format(time)}</p>
             </Col>
           </Row>
         </Card.Body>
       </Card>
 
-
-
-
-      
       <table className="table table-striped table-hover">
                     <thead>
                         <tr>

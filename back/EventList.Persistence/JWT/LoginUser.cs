@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using EventList.Domain.Data;
-using EventList.Persistence.Database;
+using EventList.Infrastructure.Database;
 
 namespace EventList.Persistence.JWT;
 
@@ -12,7 +12,9 @@ public class LoginUser(UnitOfWork uow, TokenProvider tokenProvider)
     private readonly TokenProvider _token = tokenProvider;
     public string Handle(string Email, string Password)
     {
-        User user = unit.Users.GetUserByEmail(Email) ?? throw new Exception("User not found");
+        User? user = unit.Users.GetUserByEmail(Email).Result;
+        if (user == null)
+            throw new Exception("User not found");
         bool verified = (Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(Password))).Equals(user._Password, StringComparison.CurrentCultureIgnoreCase));
         if (!verified)
         {

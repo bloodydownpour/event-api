@@ -2,7 +2,6 @@
 namespace EventList.Domain.Data
 {
     public class Event
-        //(Guid Id, string EventName, string Description, DateTime Time, string Place, string Category)
     {
         [Required]
         public Guid EventId { get; set; }

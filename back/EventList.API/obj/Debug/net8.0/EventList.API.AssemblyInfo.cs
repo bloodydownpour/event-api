@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EventList.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2131e841e213fd0557c0441c85fb7cdb22a10b6c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ddc6d6fa74a9a2a446a86aaf8e259bcd861986db")]
 [assembly: System.Reflection.AssemblyProductAttribute("EventList.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EventList.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

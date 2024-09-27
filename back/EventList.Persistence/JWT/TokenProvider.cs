@@ -25,8 +25,8 @@ public class TokenProvider(IConfiguration configuration)
                 ]),
             Expires = DateTime.UtcNow.AddMinutes(15),
             SigningCredentials = credentials,
-            Issuer = configuration["Jwt:Issuer"],
-            Audience = configuration["Jwt:Audience"]
+            Issuer = _config["Jwt:Issuer"],
+            Audience = _config["Jwt:Audience"]
         };
 
         var handler = new JsonWebTokenHandler();

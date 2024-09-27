@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CNVPJQBIUfs=",
+  "dgSpecHash": "NPzlq6yaoK/jRRmYrH3MiAR+2gw67HRuBeI+OA0i55kNALIXZjMcJ35N5h5vPqdtOd6/0g5NPXPaQElJ9I6HKA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\source\\repos\\EventAPI\\EventAPI\\back\\EventList.Domain\\EventList.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Никита\\event-api\\back\\EventList.Domain\\EventList.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
