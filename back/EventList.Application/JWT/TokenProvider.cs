@@ -5,7 +5,8 @@ using System.Text;
 using EventList.Domain.Data;
 using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 using Microsoft.Extensions.Configuration;
-namespace EventList.Persistence.JWT;
+
+namespace EventList.Application.JWT;
 
 public class TokenProvider(IConfiguration configuration)
 {
@@ -30,7 +31,6 @@ public class TokenProvider(IConfiguration configuration)
         };
 
         var handler = new JsonWebTokenHandler();
-
         string token = handler.CreateToken(tokenDescriptor);
         return token;
     }

@@ -1,20 +1,22 @@
-﻿namespace EventList.Infrastructure.Database;
+﻿using EventList.Domain.Interfaces;
 
-public class UnitOfWork(EventDbContext context, EventRepository eRepos, UserRepository uRepos) : IDisposable
+namespace EventList.Infrastructure.Database;
+
+public class UnitOfWork(EventDbContext context, IEventRepository eRepos, IUserRepository uRepos) : IDisposable, IUnitOfWork
 {
 
     private readonly EventDbContext context = context;
-    private readonly EventRepository eventRepos = eRepos;
-    private readonly UserRepository userRepos = uRepos;
+    private readonly IEventRepository eventRepos = eRepos;
+    private readonly IUserRepository userRepos = uRepos;
 
-    public EventRepository Events
+    public IEventRepository Events
     {
         get
         {
             return eventRepos;
         }
     }
-    public UserRepository Users
+    public IUserRepository Users
     {
         get
         {

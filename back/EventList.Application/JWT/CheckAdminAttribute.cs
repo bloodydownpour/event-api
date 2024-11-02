@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace EventList.Persistence.JWT
+namespace EventList.Application.JWT
 {
     public class CheckAdminAttribute : AuthorizeAttribute, IAuthorizationFilter
     {

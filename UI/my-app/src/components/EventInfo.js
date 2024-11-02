@@ -2,6 +2,8 @@ import { variables } from "../variables";
 import React, {Component} from 'react';
 import { useParams } from "react-router-dom";
 import { Card, Row, Col } from 'react-bootstrap';
+import { jwtDecode } from "jwt-decode";
+import { RefreshToken } from "./TokenRefresher";
 export function WithRouter(Component) {
     function ComponentWithRouterProp(props) {
       let params = useParams();
@@ -25,14 +27,13 @@ export function WithRouter(Component) {
         place:'',
         category:'',
         fileName:'',
-
         registeredUsers:[],
       }
     }
     componentDidMount() {
-      this.getTargetEvent();
+        this.getTargetEvent();
     }
-  
+      
     format(target) {
       let date = target.split('T')[0];
       let time = target.split('T')[1];
@@ -59,7 +60,7 @@ export function WithRouter(Component) {
       const {id} = this.props.params;
       fetch(`${variables.USER_API_URL}/GetUsersForThisEvent?EventId=${id}`,{
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          Authorization: `Bearer ${this.state.token}`,
           'Accept': 'application/json',
           'Content-Type': 'application/json'}
       })
@@ -67,21 +68,25 @@ export function WithRouter(Component) {
         return response.json()
       })
       .then(data => { 
+        console.log(data)
         this.setState({registeredUsers: data})
       });
     }
 
     registerUserInEvent=()=> {
-      fetch(`${variables.USER_API_URL}/AddUserInEvent?EventId=${this.state.eventid}&UserId=${localStorage.getItem('userid')}`,{
+      fetch(`${variables.USER_API_URL}/RegisterUserInEvent?EventId=${this.state.eventid}&UserId=${localStorage.getItem('userid')}`,{
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
-          
         }
       })
       .then(response => {
-        alert("Done")
-      window.location.reload()});
+        response.text();
+      })
+      .then(data => {
+        console.log(data);
+        window.location.reload();
+      })
     }
 
     retractUserVote=()=> {
@@ -99,6 +104,11 @@ export function WithRouter(Component) {
 
     getTargetEvent=()=> {
       const {id} = this.props.params;
+      const checkToken = localStorage.getItem('token') || "";
+        if (checkToken !== "" && jwtDecode(checkToken).exp < Math.floor(Date.now()/1000)) {
+          RefreshToken();
+        }
+        const newToken = localStorage.getItem("token")
       fetch(`${variables.EVENT_API_URL}/GetEventById?id=${id}`,{
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
 using EventList.Infrastructure.Database;
-using EventList.Persistence.JWT;
+using EventList.Application.JWT;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.FileProviders;
@@ -13,6 +13,8 @@ using FluentValidation.AspNetCore;
 using EventList.API.Middleware;
 using EventList.Infrastructure.CQRS.Queries;
 using EventList.Infrastructure.CQRS.Commands;
+using EventList.Domain.Interfaces;
+using EventList.Infrastructure.ImageUploader;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(Program));
@@ -54,7 +56,7 @@ builder.Services.AddSwaggerGen(options=>
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddSingleton<PasswordHasher>();
 builder.Services.AddSingleton<TokenProvider>();
-builder.Services.AddTransient<LoginUser>();
+builder.Services.AddTransient<ILoginUser, LoginUser>();
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(o =>
@@ -75,15 +77,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddDbContext<EventDbContext>(x => x.UseSqlServer(
     "Data Source=(local); Database=EventList; Persist Security Info = false; MultipleActiveResultSets=True; Trusted_Connection=True; TrustServerCertificate=True;",
     b => b.MigrationsAssembly("EventList.API")));
-builder.Services.AddScoped<EventRepository>();
+builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<EventQueries>();
 builder.Services.AddScoped<EventCommands>();
 
-builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<UserQueries>();
 builder.Services.AddScoped<UserCommands>();
 
-builder.Services.AddScoped<UnitOfWork>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
 
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
@@ -91,6 +93,8 @@ builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
 
 builder.Services.AddControllers()
     .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RegisterValidator>());
+
+builder.Services.AddScoped<ImageUploader>();
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -6,10 +6,17 @@ namespace EventList.Infrastructure.Database;
 public class EventRepository(EventDbContext context) : IEventRepository
 {
     private readonly EventDbContext context = context;
+    private const int PAGE_SIZE = 5;
     //Получение списка всех ивентов
     public IQueryable<Event> GetEvents()
     {
         return context.Events;
+    }
+    //Получение списка всех ивентов, но с пагинацией(NO SHIT SHERLOCK)
+
+    public IQueryable<Event> GetEventsPaginated(int id)
+    {
+        return context.Events.Skip(PAGE_SIZE * (id - 1)).Take(PAGE_SIZE);
     }
     //Получение ивента по айдишнику
     public Task<Event?> GetEventById(Guid id)
@@ -24,49 +31,30 @@ public class EventRepository(EventDbContext context) : IEventRepository
     //Добавление ивента
     public void AddEvent(Event entity)
     {
-        if (context.Events.All(e => e.EventId != entity.EventId)) 
-        {
-            context.Events.Add(entity);
-        }
+        context.Events.Add(entity);
     }
     //Изменение ивента
     public void EditEvent(Event newEvent)
     {
-        Event? target = GetEventById(newEvent.EventId).Result;
-        if (target != null)
-        {
-            context.Events.Entry(target).CurrentValues.SetValues(newEvent);
-        }
+        context.Events
+            .Entry(context.Events.Find(newEvent.EventId))
+            .CurrentValues.SetValues(newEvent);
     }
     //Удаление ивента
-    public void DeleteEvent(Guid EventId)
+    public void DeleteEvent(Event Event)
     {
-        ClearRelations(EventId);
-        Event? target = GetEventById(EventId).Result;
-        if (context.Events.Any(e => e.EventId == EventId) && target != null)
-        {
-            context.Events.Remove(target);
-        }
+        context.EventUsers.
+            RemoveRange(context.EventUsers.Where(e => e.EventId == Event.EventId));
+        context.Events.Remove(Event);
     }
-    public void ClearRelations(Guid EventId)
+    public List<EventUser> GetEUForUser(Guid UserId)
     {
-        List<EventUser> entities = context.EventUsers.Where(x => x.EventId == EventId).ToList<EventUser>();
-        foreach (var entity in entities)
-        {
-            context.EventUsers.Remove(entity);
-        }
+        return [.. context.EventUsers.Where(eu => eu.UserId == UserId)];
     }
     //Получение списка событий для определённого пользователя
-    public List<Event> GetEventsForThisUser(Guid UserId)
-    { 
-        List<EventUser> eu = [.. context.EventUsers.Where(eu => eu.UserId == UserId)];
-        List<Event> events = new List<Event>();
-        foreach (EventUser eventUser in eu)
-        {
-            Event? target = GetEventById(eventUser.EventId).Result;
-            if (target != null)
-                events.Add(target);
-        }
-        return events;
+    public List<Event> GetEventsForThisUser(List<EventUser> result)
+    {
+
+        return [.. result.Select(res => GetEventById(res.EventId).Result)];
     }
 }

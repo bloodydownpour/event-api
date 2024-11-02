@@ -1,37 +1,18 @@
 ﻿using EventList.Domain.Data;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography;
-using System.Text;
-using EventList.Infrastructure.Database;
+using EventList.Infrastructure.CQRS.Commands;
 
 namespace EventList.API.Structure.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class RegisterController(UnitOfWork unitOfWork) : Controller
+    public class RegisterController(UserCommands commands) : Controller
     {
-        private readonly UnitOfWork unitOfWork = unitOfWork;
-
-        private static string Encrypt(string value)
-        {
-            return Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(value))).ToLower();
-        }
-        // GET: RegistrationController
+        private readonly UserCommands commands = commands;
         [HttpPost("RegisterUser")]
-        
-        public async Task<string> AddUser(User user)
+        public async Task AddUser(User user)
         {
-            if (ModelState.IsValid)
-            {
-                user._Password = Encrypt(user._Password);
-                unitOfWork.Users.AddUser(user);
-                await unitOfWork.SaveAsync();
-                return "200 OK\n" +
-                    $"{user._Password}";
-            } else
-            {
-                return "Failed";
-            }
+            await commands.AddUser(user, ModelState);
         }
     }
 }

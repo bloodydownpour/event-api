@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { jwtDecode } from "jwt-decode";
 import { variables } from "../variables";
 import { v4 as uuid } from 'uuid';
+import { RefreshToken } from "./TokenRefresher";
 export class Events extends Component {
     constructor(props) {
         super(props);
@@ -204,15 +205,19 @@ export class Events extends Component {
             })
     }
     refreshEventList() {
-        const token = localStorage.getItem('token' || "");
+        const checkToken = localStorage.getItem('token') || "";
+        if (checkToken !== "" && jwtDecode(checkToken).exp < Math.floor(Date.now()/1000)) {
+            RefreshToken()
+        }
+        const newToken = localStorage.getItem("token")
         fetch(variables.EVENT_API_URL + '/GetEventList', {
-            headers: {Authorization: `Bearer ${token}`}
+            headers: {Authorization: `Bearer ${newToken}`}
         })
             .then(response => {
                 if (!response.ok) {
                     localStorage.setItem('error', response.status);
                     localStorage.setItem('error-desc', response.statusText)
-                    window.location.href='/error'
+                    //window.location.href='/error'
                 } else {
                 return response.json()}}
            )
@@ -220,7 +225,6 @@ export class Events extends Component {
                 this.setState({ events: data , eventsWithoutFilter: data});
             })
             .catch(err => { 
-
             })
             
         }
@@ -230,11 +234,11 @@ export class Events extends Component {
         if (localStorage.getItem('userid') != '') {
             this.refreshEventList();
         } else {
-            localStorage.setItem('error', '403');
+            localStorage.setItem('error', '401');
             localStorage.setItem('error-desc', 'Unauthorized')
 
             
-            window.location.href='/error'
+            //window.location.href='/error'
         }
 
     }

@@ -1,25 +1,25 @@
 ﻿using AutoMapper;
 using EventList.Domain.Data;
 using EventList.Domain.Interfaces;
-using EventList.Infrastructure.Database;
 
 namespace EventList.Infrastructure.CQRS.Queries
 {
-    public class UserQueries(UnitOfWork unitOfWork, IMapper mapper)
+    public class UserQueries(IUnitOfWork unitOfWork, IMapper mapper)
     {
-        private readonly UnitOfWork unitOfWork = unitOfWork;
+        private readonly IUnitOfWork unitOfWork = unitOfWork;
         private readonly IMapper mapper = mapper;
         public List<User> GetAllUsers()
         {
             return [.. unitOfWork.Users.GetUsers()];
         }
-        public User? GetUserByGuid(Guid id)
+        public async Task<User?> GetUserByGuid(Guid id)
         {
-            return unitOfWork.Users.GetUserByGuid(id).Result;
+            return await unitOfWork.Users.GetUserByGuid(id);
         }
         public List<User> GetUsersForThisEvent(Guid EventId)
         {
-            return unitOfWork.Users.GetUsersForThisEvent(EventId);
+            return unitOfWork.Users.GetUsersForThisEvent(
+                unitOfWork.Users.GetEUForEvent(EventId));
         }
 
     }

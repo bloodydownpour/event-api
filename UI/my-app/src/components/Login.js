@@ -40,7 +40,7 @@ export class Login extends Component {
           if (!response.ok) {
                 localStorage.setItem('error', response.status);
                 localStorage.setItem('error-desc',  response.statusText)
-                window.location.href='/error'
+                //window.location.href='/error'
 
 
             } else 
@@ -71,7 +71,6 @@ export class Login extends Component {
         })
         fetch(`${variables.REGISTER_URL}`, {
                 method: 'POST',
-                
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'

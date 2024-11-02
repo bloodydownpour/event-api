@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import React,{Component} from "react";
 import { variables } from "../variables";
+import { jwtDecode } from "jwt-decode";
+import { RefreshToken } from "./TokenRefresher";
 export function WithRouter(Component) {
     function ComponentWithRouterProp(props) {
       let params = useParams();
@@ -47,6 +49,7 @@ export class UserInfo extends Component {
         return returnDate;
     }
     setPfp(id, filename) {
+        console.log(id, filename)
         fetch(variables.USER_API_URL+"/UpdateUserPfp?id="+id+"&fileName="+filename,
             {method: 'POST',
                 headers: {
@@ -60,9 +63,14 @@ export class UserInfo extends Component {
             } })
     }
     parseUser() {
+        const checkToken = localStorage.getItem('token') || "";
+        if (checkToken !== "" && jwtDecode(checkToken).exp < Math.floor(Date.now()/1000)) {
+            RefreshToken()
+        }
+        const newToken = localStorage.getItem("token")
         fetch (variables.USER_API_URL+"/GetUserByGuid?id="+this.props.params.id, {
             headers: {
-                Authorization: `Bearer ${JSON.stringify(localStorage.getItem('token'))}`,
+                Authorization: `Bearer ${JSON.stringify(newToken)}`,
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
@@ -119,7 +127,6 @@ export class UserInfo extends Component {
                 localStorage.setItem('error-desc', response.statusText)
                 window.location.href='/error'
             } else {
-                
             response.text()}
         }
     )
@@ -144,7 +151,7 @@ export class UserInfo extends Component {
             events
         } = this.state;
         if (localStorage.getItem('userid') == '') {
-            localStorage.setItem('error', "403");
+            localStorage.setItem('error', "401");
             localStorage.setItem('error-desc', "Unauthorized")
             window.location.href='/error'
         } else 
