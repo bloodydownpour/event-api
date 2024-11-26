@@ -5,7 +5,7 @@ using AutoMapper;
 using EventList.Infrastructure.CQRS.Queries;
 using EventList.Infrastructure.CQRS.Commands;
 using EventList.Application.JWT;
-using EventList.Infrastructure.ImageUploader;
+using EventList.Application.ImageHandler;
 using Microsoft.AspNetCore.Authorization;
 
 namespace EventList.API.Structure.Controllers;
@@ -14,13 +14,13 @@ namespace EventList.API.Structure.Controllers;
 [Route("[controller]")]
 //[Authorize]
 public class EventController(IWebHostEnvironment environment,
-    IMapper mapper, EventQueries queries, EventCommands commands, ImageUploader imageUploader) : Controller
+    IMapper mapper, EventQueries queries, EventCommands commands, ImageHandler imageHandler) : Controller
 {
     private readonly IMapper mapper = mapper;
     private readonly IWebHostEnvironment environment = environment;
     private readonly EventQueries queries = queries;
     private readonly EventCommands commands = commands;
-    private readonly ImageUploader imageUploader = imageUploader;
+    private readonly ImageHandler imageHandler = imageHandler;
 
     //Получение списка всех событий
 
@@ -58,7 +58,7 @@ public class EventController(IWebHostEnvironment environment,
     [HttpPost("UploadImage")]
     public async Task<string> UploadImage(IFormFile file)
     {
-        return await imageUploader.UploadImage(environment.ContentRootPath, "EventPhotos", file);
+        return await imageHandler.UploadImage(environment.ContentRootPath, "EventPhotos", file);
     }
     //Изменение информации о существующем событии
     [HttpPost("EditEvent")]
@@ -78,6 +78,6 @@ public class EventController(IWebHostEnvironment environment,
     [HttpDelete("DeleteEvent")]
     public async Task DeleteEvent(Guid EventId)
     {
-       await commands.DeleteEvent(queries.GetEvent_ID(EventId));
+       await commands.DeleteEvent(await queries.GetEvent_ID(EventId), environment.ContentRootPath);
     }
 }

@@ -1,34 +1,23 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using EventList.Domain.Data;
-using EventList.Infrastructure.ImageUploader;
+using EventList.Application.ImageHandler;
 using EventList.API.DTO;
 using AutoMapper;
 using EventList.Infrastructure.CQRS.Commands;
 using EventList.Infrastructure.CQRS.Queries;
-using EventList.Application.Exceptions;
 
 namespace EventList.API.Structure.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UserController : Controller
+    public class UserController(IWebHostEnvironment environment, IMapper mapper,
+        UserCommands commands, UserQueries queries, ImageHandler imageHandler) : Controller
     {
-        private readonly IWebHostEnvironment environment;
-        private readonly IMapper mapper;
-        private readonly UserCommands commands;
-        private readonly UserQueries queries;
-        private readonly ImageUploader imageUploader;
-        public UserController(IWebHostEnvironment environment, IMapper mapper,
-            UserCommands commands, UserQueries queries, ImageUploader imageUploader)
-        {
-            this.environment = environment;
-            this.mapper = mapper;
-            this.commands = commands;
-            this.queries = queries;
-            this.imageUploader = imageUploader;
-        }
-
+        private readonly IWebHostEnvironment environment = environment;
+        private readonly IMapper mapper = mapper;
+        private readonly UserCommands commands = commands;
+        private readonly UserQueries queries = queries;
+        private readonly ImageHandler imageHandler = imageHandler;
 
         [HttpGet("GetUsers")]
         public List<User> GetAllUsers()
@@ -54,20 +43,12 @@ namespace EventList.API.Structure.Controllers
         [HttpPost("UploadImage")]
         public async Task<string> UploadImage(IFormFile file)
         {
-            return await imageUploader.UploadImage(environment.ContentRootPath, "UserPhotos", file);
+            return await imageHandler.UploadImage(environment.ContentRootPath, "UserPhotos", file);
         }
         [HttpPost("JWT_Login")]
-        public async Task<IActionResult> Login(string Email, string Password)
+        public async Task<String> Login(string Email, string Password)
         {
-            try
-            {
-                string token = await commands.Login(Email, Password);
-                return Ok(new { token });
-            } 
-            catch (UnauthorizedException)
-            {
-                return Unauthorized();
-            }
+            return await commands.Login(Email, Password);
         }
         [HttpPost("UpdateUserPfp")]
         public async Task UpdateUserPfp(Guid id, string fileName)
@@ -93,7 +74,7 @@ namespace EventList.API.Structure.Controllers
         [HttpPost("Logout")]
         public async Task Logout(string token)
         {
-            await commands.ClearRefreshToken(commands.GetRefreshTokenByToken(token));
+            await commands.ClearRefreshToken(await commands.GetRefreshToken(token));
         }
     }
 }

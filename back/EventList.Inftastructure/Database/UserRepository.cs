@@ -1,8 +1,6 @@
 ﻿using EventList.Domain.Data;
 using EventList.Domain.Interfaces;
-using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json.Linq;
 namespace EventList.Infrastructure.Database;
 
 public class UserRepository(EventDbContext context) : IUserRepository
@@ -45,13 +43,13 @@ public class UserRepository(EventDbContext context) : IUserRepository
     }
     public void ToggleAdmin(User user)
     {
-            user.IsAdmin = !user.IsAdmin;
-            context.Users.Entry(user).CurrentValues.SetValues(user);
+        user.IsAdmin = !user.IsAdmin;
+        context.Users.Update(user);
     }
     public void UpdateUserPfp(User user, string fileName)
     {
-            user.PfpName = fileName;
-            context.Users.Entry(user).CurrentValues.SetValues(user);
+        user.PfpName = fileName;
+        context.Users.Update(user);
     }
 
     public List<EventUser> GetEUForEvent(Guid EventId)
@@ -61,33 +59,21 @@ public class UserRepository(EventDbContext context) : IUserRepository
     //Получение списка событий для определённого пользователя
     public List<User> GetUsersForThisEvent(List<EventUser> result)
     {
-
         return [.. result.Select(res => GetUserByGuid(res.UserId).Result)];
     }
-    public async Task<RefreshToken?> GetRefreshTokenByGuid(Guid userId)
+    public async Task<RefreshToken?> GetRefreshToken(Guid userId)
     {
         return await context.RefreshTokens.FirstOrDefaultAsync(rt =>
         rt.UserId == userId && rt.Expiration > DateTime.UtcNow);
     }
 
-    public async Task<RefreshToken?> GetRefreshTokenByToken(string token)
-    {
-        return await context.RefreshTokens.FirstOrDefaultAsync(rt =>
-        rt.AccessToken == token && rt.Expiration > DateTime.UtcNow);
-    }
     public void ClearRefreshToken(RefreshToken refreshToken)
     {
         context.RefreshTokens.Remove(refreshToken);
     }
 
-    public async Task UpdateRefreshToken(RefreshToken rt, string newToken)
-    {
-        rt.AccessToken = newToken;
-        context.RefreshTokens.Entry(rt).CurrentValues.SetValues(rt);
-    }
-    public void SaveRefreshToken(string token, Guid userId)
-    {
-        var refreshToken = new RefreshToken(token, userId, DateTime.UtcNow.AddDays(30));
-        context.RefreshTokens.Add(refreshToken);
+    public void CreateRefreshToken(Guid userId)
+    { 
+        context.RefreshTokens.Add(new RefreshToken(userId, DateTime.UtcNow.AddDays(30)));
     }
 }

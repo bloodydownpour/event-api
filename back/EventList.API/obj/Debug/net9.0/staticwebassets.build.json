@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "PGGnNdAWfXeM8e6LGvhiOxoc15jFmKbngXqdclM686U=",
+  "Source": "EventList.API",
+  "BasePath": "_content/EventList.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

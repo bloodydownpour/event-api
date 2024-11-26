@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "XIf1imJk8JmYF3ryDw13R1hGlstNj3rsG2ZaMu9/+u84Uu9y41nSeDQNwNxeipH2Vi+dF8WZGmBC2eXfSFV6WA==",
+  "dgSpecHash": "tboFKyLjsYQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\Никита\\event-api\\back\\EventList.Application\\EventList.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Никита\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\fluentvalidation\\11.10.0\\fluentvalidation.11.10.0.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.4\\microsoft.aspnet.identity.core.2.2.4.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.10\\microsoft.aspnetcore.authorization.8.0.10.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.authorization\\9.0.0\\microsoft.aspnetcore.authorization.9.0.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.authorization.policy\\2.2.0\\microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\2.2.0\\microsoft.aspnetcore.connections.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
@@ -21,7 +21,7 @@
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.diagnostics\\2.2.0\\microsoft.aspnetcore.diagnostics.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.abstractions\\2.2.0\\microsoft.aspnetcore.diagnostics.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.hostfiltering\\2.2.0\\microsoft.aspnetcore.hostfiltering.2.2.0.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.hosting\\2.2.0\\microsoft.aspnetcore.hosting.2.2.0.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.hosting\\2.2.7\\microsoft.aspnetcore.hosting.2.2.7.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
@@ -32,7 +32,7 @@
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.httpoverrides\\2.2.0\\microsoft.aspnetcore.httpoverrides.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\2.2.0\\microsoft.aspnetcore.jsonpatch.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.localization\\2.2.0\\microsoft.aspnetcore.localization.2.2.0.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.metadata\\8.0.10\\microsoft.aspnetcore.metadata.8.0.10.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.metadata\\9.0.0\\microsoft.aspnetcore.metadata.9.0.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.mvc\\2.2.0\\microsoft.aspnetcore.mvc.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.mvc.abstractions\\2.2.0\\microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.mvc.analyzers\\2.2.0\\microsoft.aspnetcore.mvc.analyzers.2.2.0.nupkg.sha512",
@@ -62,7 +62,6 @@
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.server.kestrel.transport.abstractions\\2.2.0\\microsoft.aspnetcore.server.kestrel.transport.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.server.kestrel.transport.sockets\\2.2.0\\microsoft.aspnetcore.server.kestrel.transport.sockets.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.bcl.timeprovider\\8.0.1\\microsoft.bcl.timeprovider.8.0.1.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.codeanalysis.common\\2.8.0\\microsoft.codeanalysis.common.2.8.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.codeanalysis.csharp\\2.8.0\\microsoft.codeanalysis.csharp.2.8.0.nupkg.sha512",
@@ -75,12 +74,12 @@
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.2.0\\microsoft.extensions.configuration.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.configuration.binder\\2.2.0\\microsoft.extensions.configuration.binder.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.configuration.commandline\\2.2.0\\microsoft.extensions.configuration.commandline.2.2.0.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.configuration.environmentvariables\\2.2.0\\microsoft.extensions.configuration.environmentvariables.2.2.0.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.configuration.environmentvariables\\2.2.4\\microsoft.extensions.configuration.environmentvariables.2.2.4.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\2.2.0\\microsoft.extensions.configuration.fileextensions.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.configuration.json\\2.2.0\\microsoft.extensions.configuration.json.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.configuration.usersecrets\\2.2.0\\microsoft.extensions.configuration.usersecrets.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\2.2.0\\microsoft.extensions.dependencyinjection.2.2.0.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.dependencymodel\\2.1.0\\microsoft.extensions.dependencymodel.2.1.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\2.2.0\\microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.fileproviders.composite\\2.2.0\\microsoft.extensions.fileproviders.composite.2.2.0.nupkg.sha512",
@@ -90,20 +89,20 @@
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.localization\\2.2.0\\microsoft.extensions.localization.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\2.2.0\\microsoft.extensions.localization.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.logging\\2.2.0\\microsoft.extensions.logging.2.2.0.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.logging.configuration\\2.2.0\\microsoft.extensions.logging.configuration.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.logging.console\\2.2.0\\microsoft.extensions.logging.console.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.logging.debug\\2.2.0\\microsoft.extensions.logging.debug.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.logging.eventsource\\2.2.0\\microsoft.extensions.logging.eventsource.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.objectpool\\2.2.0\\microsoft.extensions.objectpool.2.2.0.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.options\\9.0.0\\microsoft.extensions.options.9.0.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\2.2.0\\microsoft.extensions.options.configurationextensions.2.2.0.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0\\microsoft.extensions.primitives.9.0.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.extensions.webencoders\\2.2.0\\microsoft.extensions.webencoders.2.2.0.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.1.2\\microsoft.identitymodel.abstractions.8.1.2.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.1.2\\microsoft.identitymodel.jsonwebtokens.8.1.2.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.identitymodel.logging\\8.1.2\\microsoft.identitymodel.logging.8.1.2.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.1.2\\microsoft.identitymodel.tokens.8.1.2.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.2.1\\microsoft.identitymodel.abstractions.8.2.1.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.2.1\\microsoft.identitymodel.jsonwebtokens.8.2.1.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.identitymodel.logging\\8.2.1\\microsoft.identitymodel.logging.8.2.1.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.2.1\\microsoft.identitymodel.tokens.8.2.1.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
@@ -136,7 +135,7 @@
     "C:\\Users\\Никита\\.nuget\\packages\\system.componentmodel.annotations\\4.5.0\\system.componentmodel.annotations.4.5.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\system.console\\4.3.0\\system.console.4.3.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
-    "C:\\Users\\Никита\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.5.0\\system.diagnostics.diagnosticsource.4.5.0.nupkg.sha512",
+    "C:\\Users\\Никита\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.0\\system.diagnostics.diagnosticsource.9.0.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\system.diagnostics.fileversioninfo\\4.3.0\\system.diagnostics.fileversioninfo.4.3.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\system.diagnostics.stacktrace\\4.3.0\\system.diagnostics.stacktrace.4.3.0.nupkg.sha512",
     "C:\\Users\\Никита\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",
@@ -206,6 +205,66 @@
     "C:\\Users\\Никита\\.nuget\\packages\\system.xml.xpath.xdocument\\4.3.0\\system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "У пакета \"Microsoft.AspNetCore.Server.IIS\" 2.2.0 есть известная уязвимость https://github.com/advisories/GHSA-prrf-397v-83xh (уровень серьезности: средний)",
+      "libraryId": "Microsoft.AspNetCore.Server.IIS",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "У пакета \"Newtonsoft.Json\" 11.0.2 есть известная уязвимость https://github.com/advisories/GHSA-5crp-9r3c-p9vr (уровень серьезности: высокий)",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "У пакета \"System.Net.Http\" 4.3.0 есть известная уязвимость https://github.com/advisories/GHSA-7jgj-8wvc-jh57 (уровень серьезности: высокий)",
+      "libraryId": "System.Net.Http",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "У пакета \"System.Security.Cryptography.Xml\" 4.5.0 есть известная уязвимость https://github.com/advisories/GHSA-vh55-786g-wjwj (уровень серьезности: средний)",
+      "libraryId": "System.Security.Cryptography.Xml",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1904",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "У пакета \"System.Text.Encodings.Web\" 4.5.0 есть известная уязвимость https://github.com/advisories/GHSA-ghhp-997w-qr28 (уровень серьезности: критический)",
+      "libraryId": "System.Text.Encodings.Web",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "У пакета \"System.Text.RegularExpressions\" 4.3.0 есть известная уязвимость https://github.com/advisories/GHSA-cmhx-cq75-c4mj (уровень серьезности: высокий)",
+      "libraryId": "System.Text.RegularExpressions",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

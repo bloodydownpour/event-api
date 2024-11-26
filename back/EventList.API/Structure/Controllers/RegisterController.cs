@@ -12,7 +12,7 @@ namespace EventList.API.Structure.Controllers
         [HttpPost("RegisterUser")]
         public async Task AddUser(User user)
         {
-            await commands.AddUser(user, ModelState);
+            await commands.AddUser(user);
         }
     }
 }

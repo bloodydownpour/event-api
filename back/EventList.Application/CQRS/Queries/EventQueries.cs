@@ -15,18 +15,16 @@ namespace EventList.Infrastructure.CQRS.Queries
         {
             return [.. unitOfWork.Events.GetEventsPaginated(id)];
         }
-        public Event? GetEvent_ID(Guid id)
+        public async Task<Event> GetEvent_ID(Guid id)
         {
-            return unitOfWork.Events.GetEventById(id).Result;
+            return await unitOfWork.Events.GetEventById(id);
         }
-        public Event? GetEvent_Name(string Name)
+        public async Task<Event> GetEvent_Name(string Name)
         {
-            return unitOfWork.Events.GetEventByName(Name).Result;
+            return await unitOfWork.Events.GetEventByName(Name);
         }
-        
         public List<Event> GetEventsForThisUser(Guid UserId)
         {
-
             return unitOfWork.Events.GetEventsForThisUser(
                 unitOfWork.Events.GetEUForUser(UserId));
         }

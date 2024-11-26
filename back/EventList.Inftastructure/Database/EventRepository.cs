@@ -36,9 +36,7 @@ public class EventRepository(EventDbContext context) : IEventRepository
     //Изменение ивента
     public void EditEvent(Event newEvent)
     {
-        context.Events
-            .Entry(context.Events.Find(newEvent.EventId))
-            .CurrentValues.SetValues(newEvent);
+        context.Events.Update(newEvent);
     }
     //Удаление ивента
     public void DeleteEvent(Event Event)

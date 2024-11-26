@@ -30,13 +30,13 @@ public class UnitOfWork(EventDbContext context, IEventRepository eRepos, IUserRe
     private bool isDisposed = false;
     public virtual void Dispose(bool disposing)
     {
-        if (!this.isDisposed)
+        if (!isDisposed)
         {
             if (disposing)
             {
                 context.Dispose();
             }
-            this.isDisposed = true;
+            isDisposed = true;
         }
     }
     public void Dispose()

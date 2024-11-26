@@ -14,7 +14,8 @@ using EventList.API.Middleware;
 using EventList.Infrastructure.CQRS.Queries;
 using EventList.Infrastructure.CQRS.Commands;
 using EventList.Domain.Interfaces;
-using EventList.Infrastructure.ImageUploader;
+using EventList.Application.ImageHandler;
+using EventList.Infrastructure.PasswordService;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(Program));
@@ -56,7 +57,8 @@ builder.Services.AddSwaggerGen(options=>
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddSingleton<PasswordHasher>();
 builder.Services.AddSingleton<TokenProvider>();
-builder.Services.AddTransient<ILoginUser, LoginUser>();
+builder.Services.AddScoped<IPasswordService, PasswordService>();
+//builder.Services.AddTransient<ILoginUser, LoginUser>();
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(o =>
@@ -76,7 +78,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddDbContext<EventDbContext>(x => x.UseSqlServer(
     "Data Source=(local); Database=EventList; Persist Security Info = false; MultipleActiveResultSets=True; Trusted_Connection=True; TrustServerCertificate=True;",
-    b => b.MigrationsAssembly("EventList.API")));
+    b => b.MigrationsAssembly("EventList.Inftastructure")));
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<EventQueries>();
 builder.Services.AddScoped<EventCommands>();
@@ -94,7 +96,7 @@ builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
 builder.Services.AddControllers()
     .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RegisterValidator>());
 
-builder.Services.AddScoped<ImageUploader>();
+builder.Services.AddScoped<ImageHandler>();
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
