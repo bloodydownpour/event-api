@@ -33,23 +33,23 @@ export class Login extends Component {
         fetch(variables.USER_API_URL+"/JWT_Login?Email="+this.state.Email+"&Password="+this.state.Password, {
             method:"POST",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'text/plain'
             }
         })
         .then(response => {
+            console.log()
           if (!response.ok) {
                 localStorage.setItem('error', response.status);
                 localStorage.setItem('error-desc',  response.statusText)
                 //window.location.href='/error'
-
-
-            } else 
-            return response.json();
+            } 
+            return response.text();
           })
         .then(data => {
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('userid', jwtDecode(data.token).sub)
-            localStorage.setItem('isadmin', jwtDecode(data.token).isAdmin)
+            console.log(data)
+            localStorage.setItem('token', data);
+            localStorage.setItem('userid', jwtDecode(data).sub)
+            localStorage.setItem('isadmin', jwtDecode(data).isAdmin)
             window.location.href='/event'
         })
         .catch(error => {

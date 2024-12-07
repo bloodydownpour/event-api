@@ -179,4 +179,3 @@ C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\ref\EventLis
 C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\EventList.Inftastructure.dll
 C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\EventList.Inftastructure.pdb
 C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
-C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\TemplateEngineHost\vs\templatecache.json

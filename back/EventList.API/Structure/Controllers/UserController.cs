@@ -51,7 +51,7 @@ namespace EventList.API.Structure.Controllers
             return await imageHandler.UploadImage(environment.ContentRootPath, "UserPhotos", file);
         }
         [HttpPost("JWT_Login")]
-        public async Task<String> Login(string Email, string Password)
+        public async Task<string> Login(string Email, string Password)
         {
             return await commands.Login(new LoginCommandData { Email = Email, Password = Password});
         }
