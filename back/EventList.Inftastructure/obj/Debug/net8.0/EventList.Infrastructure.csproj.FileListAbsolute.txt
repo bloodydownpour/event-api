@@ -34,3 +34,5 @@ C:\Users\Никита\event-api\back\EventList.Inftastructure\obj\Debug\net8.0\E
 C:\Users\Никита\event-api\back\EventList.Inftastructure\obj\Debug\net8.0\refint\EventList.Infrastructure.dll
 C:\Users\Никита\event-api\back\EventList.Inftastructure\obj\Debug\net8.0\EventList.Infrastructure.pdb
 C:\Users\Никита\event-api\back\EventList.Inftastructure\obj\Debug\net8.0\ref\EventList.Infrastructure.dll
+C:\Users\Никита\event-api\back\EventList.Inftastructure\bin\Debug\net8.0\EventList.Infrastructure.runtimeconfig.json
+C:\Users\Никита\event-api\back\EventList.Inftastructure\obj\Debug\net8.0\EventList.Infrastructure.genruntimeconfig.cache

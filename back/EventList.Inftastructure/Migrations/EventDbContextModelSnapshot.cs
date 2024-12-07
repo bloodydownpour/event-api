@@ -53,7 +53,7 @@ namespace EventList.Inftastructure.Migrations
 
                     b.HasKey("EventId");
 
-                    b.ToTable("Events");
+                    b.ToTable("Events", (string)null);
                 });
 
             modelBuilder.Entity("EventList.Domain.Data.EventUser", b =>
@@ -68,7 +68,7 @@ namespace EventList.Inftastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("EventUsers");
+                    b.ToTable("EventUsers", (string)null);
                 });
 
             modelBuilder.Entity("EventList.Domain.Data.RefreshToken", b =>
@@ -86,7 +86,7 @@ namespace EventList.Inftastructure.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("RefreshTokens");
+                    b.ToTable("RefreshTokens", (string)null);
                 });
 
             modelBuilder.Entity("EventList.Domain.Data.User", b =>
@@ -126,7 +126,7 @@ namespace EventList.Inftastructure.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("EventList.Domain.Data.EventUser", b =>

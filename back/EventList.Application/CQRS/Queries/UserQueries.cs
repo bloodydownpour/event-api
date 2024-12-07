@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EventList.Domain.Data;
 using EventList.Domain.Interfaces;
+using EventList.Domain.QueryData;
 
 namespace EventList.Infrastructure.CQRS.Queries
 {
@@ -12,14 +13,14 @@ namespace EventList.Infrastructure.CQRS.Queries
         {
             return [.. unitOfWork.Users.GetUsers()];
         }
-        public async Task<User?> GetUserByGuid(Guid id)
+        public async Task<User?> GetUserByGuid(GetUserByGuidQueryData data)
         {
-            return await unitOfWork.Users.GetUserByGuid(id);
+            return await unitOfWork.Users.GetUserByGuid(data.Id);
         }
-        public List<User> GetUsersForThisEvent(Guid EventId)
+        public List<User> GetUsersForThisEvent(GetUsersForThisEventQueryData data)
         {
             return unitOfWork.Users.GetUsersForThisEvent(
-                unitOfWork.Users.GetEUForEvent(EventId));
+                unitOfWork.Users.GetEUForEvent(data.EventId));
         }
 
     }

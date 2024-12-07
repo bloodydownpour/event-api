@@ -3,7 +3,7 @@ using EventList.Domain.Interfaces;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace EventList.Infrastructure.PasswordService
+namespace EventList.Infrastructure.PasswordServices
 {
     public class PasswordService : IPasswordService
     {

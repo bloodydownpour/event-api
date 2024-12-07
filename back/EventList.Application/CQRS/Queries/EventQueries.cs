@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EventList.Domain.Data;
 using EventList.Domain.Interfaces;
+using EventList.Domain.QueryData;
 
 namespace EventList.Infrastructure.CQRS.Queries
 {
@@ -11,22 +12,22 @@ namespace EventList.Infrastructure.CQRS.Queries
         {
             return [.. unitOfWork.Events.GetEvents()];
         }
-        public List<Event> GetEventsPaginated(int id)
+        public List<Event> GetEventsPaginated(GetEventsPaginatedQueryData data)
         {
-            return [.. unitOfWork.Events.GetEventsPaginated(id)];
+            return [.. unitOfWork.Events.GetEventsPaginated(data.Page)];
         }
-        public async Task<Event> GetEvent_ID(Guid id)
+        public async Task<Event> GetEvent_ID(GetEvent_IDQueryData data)
         {
-            return await unitOfWork.Events.GetEventById(id);
+            return await unitOfWork.Events.GetEventById(data.Id);
         }
-        public async Task<Event> GetEvent_Name(string Name)
+        public async Task<Event> GetEvent_Name(GetEvent_NameQueryData data)
         {
-            return await unitOfWork.Events.GetEventByName(Name);
+            return await unitOfWork.Events.GetEventByName(data.Name);
         }
-        public List<Event> GetEventsForThisUser(Guid UserId)
+        public List<Event> GetEventsForThisUser(GetEventsForThisUserQueryData data)
         {
             return unitOfWork.Events.GetEventsForThisUser(
-                unitOfWork.Events.GetEUForUser(UserId));
+                unitOfWork.Events.GetEUForUser(data.UserId));
         }
     }
 }

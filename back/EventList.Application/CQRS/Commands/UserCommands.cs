@@ -3,100 +3,101 @@ using EventList.Domain.Data;
 using EventList.Domain.Interfaces;
 using EventList.Application.JWT;
 using Microsoft.IdentityModel.JsonWebTokens;
+using EventList.Domain.CommandData;
 
-namespace EventList.Infrastructure.CQRS.Commands
+namespace EventList.Application.CQRS.Commands
 {
     public class UserCommands(IUnitOfWork unitOfWork, TokenProvider tokenProvider, IPasswordService passwordService)
     {
         private readonly IUnitOfWork unitOfWork = unitOfWork;
         private readonly TokenProvider tokenProvider = tokenProvider;
         private readonly IPasswordService passwordService = passwordService;
-        
-        public async Task ToggleAdmin(User user)
+
+        public async Task ToggleAdmin(ToggleAdminCommandData data)
         {
-            if (await unitOfWork.Users.GetUserByGuid(user.UserId) == null)
+            if (await unitOfWork.Users.GetUserByGuid(data.User.UserId) == null)
                 throw new NotFoundException("User not found");
 
-            unitOfWork.Users.ToggleAdmin(user);
+            unitOfWork.Users.ToggleAdmin(data.User);
             await unitOfWork.SaveAsync();
-        }   
-        public async Task UpdateUserPfp(User user, string fileName)
+        }
+        public async Task UpdateUserPfp(UpdateUserPfpCommandData data)
         {
-            if (await unitOfWork.Users.GetUserByGuid(user.UserId) == null)
+            if (await unitOfWork.Users.GetUserByGuid(data.User.UserId) == null)
                 throw new NotFoundException("User not found");
-            
-            unitOfWork.Users.UpdateUserPfp(user, fileName);
+
+            unitOfWork.Users.UpdateUserPfp(data.User, data.FileName);
             await unitOfWork.SaveAsync();
         }
-        public async Task RegisterUserInEvent(Guid EventId, Guid UserId)
+        public async Task RegisterUserInEvent(RegisterUserInEventCommandData data)
         {
-            if (await unitOfWork.Events.GetEventById(EventId) == null 
-                || await unitOfWork.Users.GetUserByGuid(UserId) == null)
+            if (await unitOfWork.Events.GetEventById(data.EventId) == null
+                || await unitOfWork.Users.GetUserByGuid(data.UserId) == null)
                 throw new NotFoundException("User or event has not been found");
 
-            unitOfWork.Users.EnrollUserInEvent(EventId, UserId);
+            unitOfWork.Users.EnrollUserInEvent(data.EventId, data.UserId);
             await unitOfWork.SaveAsync();
         }
-        public async Task RetractUserFromEvent(Guid EventId, Guid UserId)
+        public async Task RetractUserFromEvent(RetractUserFromEventCommandData data)
         {
-            if (await unitOfWork.Events.GetEventById(EventId) == null 
-                || await unitOfWork.Users.GetUserByGuid(UserId) == null)
+            if (await unitOfWork.Events.GetEventById(data.EventId) == null
+                || await unitOfWork.Users.GetUserByGuid(data.UserId) == null)
                 throw new NotFoundException("User or event has not been found");
 
-            unitOfWork.Users.RetractUserFromEvent(EventId, UserId);
+            unitOfWork.Users.RetractUserFromEvent(data.EventId, data.UserId);
             await unitOfWork.SaveAsync();
         }
-        public async Task<RefreshToken> GetRefreshToken(string accessToken)
+        public async Task<RefreshToken> GetRefreshToken(GetRefreshTokenCommandData data)
         {
             JsonWebTokenHandler handler = new();
-            var decodedToken = handler.ReadJsonWebToken(accessToken);
+            var decodedToken = handler.ReadJsonWebToken(data.AccessToken);
             return await unitOfWork.Users.GetRefreshToken(new Guid(decodedToken.Subject));
         }
-        public async Task<string> Login(string Email, string Password)
-        { 
-            User user = await unitOfWork.Users.GetUserByEmail(Email)
+        public async Task<string> Login(LoginCommandData data)
+        {
+            User user = await unitOfWork.Users.GetUserByEmail(data.Email)
                 ?? throw new NotFoundException("User not found");
 
-            if (!passwordService.VerifyPassword(Password, user))
+            if (!passwordService.VerifyPassword(data.Password, user))
                 throw new UnauthorizedException("Invalid password");
 
-            string token = tokenProvider.Create(user);
-      
             if (await unitOfWork.Users.GetRefreshToken(user.UserId) == null)
             {
                 unitOfWork.Users.CreateRefreshToken(user.UserId);
                 await unitOfWork.SaveAsync();
             }
-            return token;
+            if ((await unitOfWork.Users.GetRefreshToken(user.UserId)).Expiration < DateTime.UtcNow)
+                throw new UnauthorizedException("Refresh Token has expired; log in please");
+            return tokenProvider.Create(user);
         }
-        public async Task AddUser(User user)
+        public async Task AddUser(AddUserCommandData data)
         {
 
-            if (await unitOfWork.Users.GetUserByGuid(user.UserId) != null)
+            if (await unitOfWork.Users.GetUserByGuid(data.User.UserId) != null)
                 throw new AlreadyExistsException("This user already exists!");
 
-            user._Password = passwordService.Encrypt(user._Password);
-            unitOfWork.Users.AddUser(user);
+            data.User._Password = passwordService.Encrypt(data.User._Password);
+            unitOfWork.Users.AddUser(data.User);
             await unitOfWork.SaveAsync();
         }
-        public async Task<string> RefreshToken(string token)
+        public async Task<string> RefreshToken(RefreshTokenCommandData data)
         {
             JsonWebTokenHandler handler = new();
-            var decodedToken = handler.ReadJsonWebToken(token);
-            if (decodedToken.ValidTo > DateTime.UtcNow) return token;
+            var decodedToken = handler.ReadJsonWebToken(data.Token);
+            if (decodedToken.ValidTo > DateTime.UtcNow) return data.Token;
 
             RefreshToken? refreshToken = await unitOfWork.Users.GetRefreshToken(new Guid(decodedToken.Subject))
                 ?? throw new NotFoundException("Refresh token not found");
 
             if (refreshToken.Expiration <= DateTime.UtcNow)
-                throw new BadRequestException("Refresh token has expired; log in please");
+                throw new UnauthorizedException("Refresh token has expired; log in please");
 
             return tokenProvider.Create(await unitOfWork.Users.GetUserByGuid(refreshToken.UserId));
         }
 
-        public async Task ClearRefreshToken(RefreshToken refreshToken)
+        public async Task ClearRefreshToken(ClearRefreshTokenCommandData data)
         {
-            unitOfWork.Users.ClearRefreshToken(refreshToken);
+            unitOfWork.Users.ClearRefreshToken(data.RefreshToken);
             await unitOfWork.SaveAsync();
         }
     }

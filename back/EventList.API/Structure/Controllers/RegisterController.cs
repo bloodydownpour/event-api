@@ -1,6 +1,7 @@
 ﻿using EventList.Domain.Data;
 using Microsoft.AspNetCore.Mvc;
-using EventList.Infrastructure.CQRS.Commands;
+using EventList.Application.CQRS.Commands;
+using EventList.Domain.CommandData;
 
 namespace EventList.API.Structure.Controllers
 {
@@ -12,7 +13,7 @@ namespace EventList.API.Structure.Controllers
         [HttpPost("RegisterUser")]
         public async Task AddUser(User user)
         {
-            await commands.AddUser(user);
+            await commands.AddUser(new AddUserCommandData { User = user });
         }
     }
 }

@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using EventList.Domain.Data;
-using EventList.Application.ImageHandler;
+using EventList.Application.ImageProcessing;
 using EventList.API.DTO;
 using AutoMapper;
-using EventList.Infrastructure.CQRS.Commands;
 using EventList.Infrastructure.CQRS.Queries;
+using EventList.Application.CQRS.Commands;
+using EventList.Domain.CommandData;
+using Microsoft.AspNetCore.Authorization;
+using EventList.Domain.QueryData;
 
 namespace EventList.API.Structure.Controllers
 {
@@ -27,18 +30,20 @@ namespace EventList.API.Structure.Controllers
         [HttpGet("GetUserByGuid")]
         public UserDTO GetUserByGuid(Guid id)
         {
-            return mapper.Map<UserDTO>(queries.GetUserByGuid(id).Result);
+            return mapper.Map<UserDTO>(queries.GetUserByGuid(new GetUserByGuidQueryData { Id = id }).Result);
         }
         [HttpPost("RegisterUserInEvent")]
         public async Task<string> RegisterUserInEvent(Guid EventId, Guid UserId)
         {
-            await commands.RegisterUserInEvent(EventId, UserId);
+            await commands.RegisterUserInEvent(new RegisterUserInEventCommandData { EventId = EventId, UserId = UserId});
             return "Added";
         }
         [HttpPost("ToggleAdmin")]
         public async Task ToggleAdmin(Guid UserId)
         {
-            await commands.ToggleAdmin(await queries.GetUserByGuid(UserId));
+            await commands.ToggleAdmin(new ToggleAdminCommandData { 
+                User = await queries.GetUserByGuid(new GetUserByGuidQueryData { Id = UserId }) 
+            });
         }
         [HttpPost("UploadImage")]
         public async Task<string> UploadImage(IFormFile file)
@@ -48,33 +53,34 @@ namespace EventList.API.Structure.Controllers
         [HttpPost("JWT_Login")]
         public async Task<String> Login(string Email, string Password)
         {
-            return await commands.Login(Email, Password);
+            return await commands.Login(new LoginCommandData { Email = Email, Password = Password});
         }
         [HttpPost("UpdateUserPfp")]
         public async Task UpdateUserPfp(Guid id, string fileName)
         {
-            await commands.UpdateUserPfp(await queries.GetUserByGuid(id), fileName);
+            await commands.UpdateUserPfp(new UpdateUserPfpCommandData { User = await queries.GetUserByGuid(
+                new GetUserByGuidQueryData { Id = id }), FileName = fileName });
         }
         [HttpPost("RetractUserFromEvent")]
         public async Task RetractUserFromEvent(Guid EventId, Guid UserId)
         {
-            await commands.RetractUserFromEvent(EventId, UserId);
+            await commands.RetractUserFromEvent(new RetractUserFromEventCommandData { EventId = EventId, UserId = UserId });
         }
         [HttpGet("GetUsersForThisEvent")]
-        //[Authorize]
+        [Authorize]
         public List<User> GetUsersForThisEvent(Guid EventId)
         {
-            return queries.GetUsersForThisEvent(EventId);
+            return queries.GetUsersForThisEvent(new GetUsersForThisEventQueryData { EventId = EventId });
         }
         [HttpGet("RefreshToken")]
         public async Task<string> RefreshToken(string token)
         {
-            return await commands.RefreshToken(token);
+            return await commands.RefreshToken(new RefreshTokenCommandData { Token = token});
         }
         [HttpPost("Logout")]
         public async Task Logout(string token)
         {
-            await commands.ClearRefreshToken(await commands.GetRefreshToken(token));
+            await commands.ClearRefreshToken(new ClearRefreshTokenCommandData { RefreshToken = await commands.GetRefreshToken(new GetRefreshTokenCommandData { AccessToken = token }) });
         }
     }
 }

@@ -13,19 +13,6 @@ public class EventDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<EventUser>()
-       .HasKey(eu => new { eu.EventId, eu.UserId });
-
-        modelBuilder.Entity<EventUser>()
-        .HasOne<Event>()
-        .WithMany()
-        .HasForeignKey(eu => eu.EventId);
-
-        modelBuilder.Entity<EventUser>()
-            .HasOne<User>()
-            .WithMany()
-            .HasForeignKey(eu => eu.UserId);
-        modelBuilder.Entity<RefreshToken>()
-            .HasKey("UserId");
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(EventDbContext).Assembly);
     }
 }

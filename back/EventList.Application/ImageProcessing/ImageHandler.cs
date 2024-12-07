@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 
 
-namespace EventList.Application.ImageHandler
-{
+namespace EventList.Application.ImageProcessing;
     public class ImageHandler
     {
         public async Task<string> UploadImage(string root, string path, IFormFile file)
@@ -31,4 +30,3 @@ namespace EventList.Application.ImageHandler
             }
         }
     }
-}

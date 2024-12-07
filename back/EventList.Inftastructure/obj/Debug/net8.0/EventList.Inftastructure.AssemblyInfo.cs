@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EventList.Inftastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57c6e5bbc8af63721a318fdb84e7a272b6f6b2d8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4db4ede1257f6c86d964459a4354d8d934320053")]
 [assembly: System.Reflection.AssemblyProductAttribute("EventList.Inftastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EventList.Inftastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3261,6 +3261,8 @@
         "dependencies": {
           "AutoMapper": "13.0.1",
           "EventList.Application": "1.0.0",
+          "FluentValidation": "11.11.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.8",
           "Microsoft.AspNetCore.Hosting": "2.2.7",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0"

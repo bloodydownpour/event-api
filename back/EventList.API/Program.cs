@@ -1,31 +1,18 @@
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json.Serialization;
-using EventList.Infrastructure.Database;
-using EventList.Application.JWT;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
+using FluentValidation.AspNetCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
-using EventList.Application.Validation;
-using FluentValidation.AspNetCore;
+
+using Newtonsoft.Json.Serialization;
+
 using EventList.API.Middleware;
-using EventList.Infrastructure.CQRS.Queries;
-using EventList.Infrastructure.CQRS.Commands;
-using EventList.Domain.Interfaces;
-using EventList.Application.ImageHandler;
-using EventList.Infrastructure.PasswordService;
+using EventList.Infrastructure;
+using System.Reflection;
+using EventList.Application.Validation;
+using EventList.API;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(Program));
-builder.Services.AddCors(c =>
-{
-    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-});
-// Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options=>
 {
@@ -55,48 +42,14 @@ builder.Services.AddSwaggerGen(options=>
     });
 });
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
-builder.Services.AddSingleton<PasswordHasher>();
-builder.Services.AddSingleton<TokenProvider>();
-builder.Services.AddScoped<IPasswordService, PasswordService>();
-//builder.Services.AddTransient<ILoginUser, LoginUser>();
 builder.Services.AddAuthorization();
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(o =>
-    {
-        o.RequireHttpsMetadata = false;
-        o.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]!)),
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
-            ValidAudience = builder.Configuration["Jwt:Audience"],
-            ClockSkew = TimeSpan.Zero
-        };
-    });
-
-builder.Services.AddDbContext<EventDbContext>(x => x.UseSqlServer(
-    "Data Source=(local); Database=EventList; Persist Security Info = false; MultipleActiveResultSets=True; Trusted_Connection=True; TrustServerCertificate=True;",
-    b => b.MigrationsAssembly("EventList.Inftastructure")));
-builder.Services.AddScoped<IEventRepository, EventRepository>();
-builder.Services.AddScoped<EventQueries>();
-builder.Services.AddScoped<EventCommands>();
-
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<UserQueries>();
-builder.Services.AddScoped<UserCommands>();
-
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
 
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
     .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
-builder.Services.AddControllers()
-    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RegisterValidator>());
-
-builder.Services.AddScoped<ImageHandler>();
+DependencyInjection.AddInfrastructure(builder.Services, builder.Configuration);
+DataValidation.AddDataValidation(builder.Services);
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

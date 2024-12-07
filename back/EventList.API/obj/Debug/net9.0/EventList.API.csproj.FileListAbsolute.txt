@@ -150,9 +150,7 @@ C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\runtimes\win
 C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\EventList.Application.dll
 C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\EventList.Domain.dll
-C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\EventList.Inftastructure.dll
 C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\EventList.Application.pdb
-C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\EventList.Inftastructure.pdb
 C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\EventList.Domain.pdb
 C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\EventList.API.csproj.AssemblyReference.cache
 C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\EventList.API.GeneratedMSBuildEditorConfig.editorconfig
@@ -172,10 +170,13 @@ C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\staticwebass
 C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.EventList.API.props
 C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.EventList.API.props
 C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\staticwebassets.pack.json
-C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\EventLis.58E3DD4B.Up2Date
 C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\EventList.API.dll
 C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\refint\EventList.API.dll
 C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\EventList.API.pdb
 C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\EventList.API.genruntimeconfig.cache
 C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\ref\EventList.API.dll
+C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\EventList.Inftastructure.dll
+C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\EventList.Inftastructure.pdb
+C:\Users\Никита\event-api\back\EventList.API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\Никита\event-api\back\EventList.API\bin\Debug\net9.0\TemplateEngineHost\vs\templatecache.json
